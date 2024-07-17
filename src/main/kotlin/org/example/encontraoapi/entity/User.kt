@@ -4,29 +4,29 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "users")
-data class User(
+class User() : BaseEntity() {
     @Column(nullable = false)
-    val name: String,
+    var name: String = ""
 
     @Column(nullable = false, unique = true, length = 11)
-    val cpf: String,
+    var cpf: String = ""
 
     @Column(nullable = false)
-    val registration: String,
+    var registration: String = ""
 
     @Column(nullable = false)
-    val password: String,
+    var password: String = ""
 
     @Column(nullable = false)
-    val roles: String,
+    var roles: String = ""
 
     @Column(name = "is_evaluator", nullable = false)
-    val isEvaluator: Boolean = false,
+    var isEvaluator: Boolean = false
 
     @Column(name = "is_admin", nullable = false)
-    val isAdmin: Boolean = false,
+    var isAdmin: Boolean = false
 
     @ManyToOne
     @JoinColumn(name = "id_campus", referencedColumnName = "id")
-    val campus: Campus? = null
-) : BaseEntity()
+    var campus: Campus? = null
+}

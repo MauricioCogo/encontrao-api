@@ -1,4 +1,4 @@
 package org.example.encontraoapi.repository
 
-class BasaRepository {
+class BaseRepository {
 }
