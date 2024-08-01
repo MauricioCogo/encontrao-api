@@ -6,19 +6,19 @@ import jakarta.persistence.*
 @Table(name = "users")
 class User() : BaseEntity() {
     @Column(nullable = false)
-    var name: String = ""
+    var name: String? = null
 
     @Column(nullable = false, unique = true, length = 11)
-    var cpf: String = ""
+    var cpf: String? = null
 
     @Column(nullable = false)
-    var registration: String = ""
+    var registration: String? = null
 
     @Column(nullable = false)
-    var password: String = ""
+    var password: String? = null
 
     @Column(nullable = false)
-    var roles: String = ""
+    var roles: String? = null
 
     @Column(name = "is_evaluator", nullable = false)
     var isEvaluator: Boolean = false

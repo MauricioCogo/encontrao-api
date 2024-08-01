@@ -7,7 +7,7 @@ import java.math.BigDecimal
 
 @Entity
 @Table(name = "teams")
-data class Team(
+class Team() : BaseEntity() {
     @Column(name = "grade", precision = 10, scale = 2)
-    val grade: BigDecimal?
-) : BaseEntity()
+    var grade: BigDecimal? = null
+}

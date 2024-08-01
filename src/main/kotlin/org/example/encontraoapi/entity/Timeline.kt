@@ -5,27 +5,27 @@ import java.time.LocalDateTime
 
 @Entity
 @Table(name = "timeline")
-data class Timeline(
+class Timeline() : BaseEntity() {
     @Column(name = "name", nullable = false)
-    val name: String,
+    var name: String? = null
 
     @Column(name = "required", nullable = false)
-    val required: Boolean = false,
+    var required: Boolean = false
 
     @Column(name = "date", nullable = false)
-    val date: LocalDateTime,
+    var date: LocalDateTime? = null
 
     @Column(name = "id_point", nullable = false)
-    val idPoint: Long,
+    var idPoint: Long? = null
 
     @Column(name = "id_competition", nullable = false)
-    val idCompetition: Long,
+    var idCompetition: Long? = null
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_point", referencedColumnName = "id", insertable = false, updatable = false)
-    val point: Point,
+    var point: Point? = null
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_competition", referencedColumnName = "id", insertable = false, updatable = false)
-    val competition: Competition
-) : BaseEntity()
+    var competition: Competition? = null
+}

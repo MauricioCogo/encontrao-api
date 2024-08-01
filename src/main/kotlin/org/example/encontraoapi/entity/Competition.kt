@@ -4,29 +4,30 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "competitions")
-data class Competition(
+class Competition() : BaseEntity() {
     @Column(name = "name", nullable = false)
-    val name: String,
+    var name: String? = null
 
     @Column(name = "modality", nullable = false)
-    val modality: String,
+    var modality: String? = null
 
     @Column(name = "description", nullable = false)
-    val description: String,
+    var description: String? = null
 
     @Column(name = "festival_event", nullable = false)
-    val festivalEvent: Boolean = false,
+    var festivalEvent: Boolean = false
 
     @Column(name = "participants", nullable = false)
-    val participants: Int,
+    var participants: Int? = null
 
     @Column(name = "commission", nullable = false)
-    val commission: Boolean = false,
+    var commission: Boolean = false
 
     @Column(name = "id_point", nullable = false)
-    val idPoint: Long,
+    var idPoint: Long? = null
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_point", referencedColumnName = "id", insertable = false, updatable = false)
-    val point: Point
-) : BaseEntity()
+    var point: Point? = null
+}
+

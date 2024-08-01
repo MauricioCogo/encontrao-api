@@ -6,22 +6,22 @@ import jakarta.persistence.Table
 
 @Entity
 @Table(name = "points")
-data class Point(
+class Point() : BaseEntity() {
     @Column(name = "name", nullable = false)
-    val name: String,
+    var name: String? = null
 
     @Column(name = "type", nullable = false)
-    val type: String,
+    var type: String? = null
 
     @Column(name = "description", nullable = false)
-    val description: String,
+    var description: String? = null
 
     @Column(name = "icon", nullable = false)
-    val icon: String,
+    var icon: String? = null
 
     @Column(name = "latitude", nullable = false)
-    val latitude: String,
+    var latitude: String? = null
 
     @Column(name = "longitude", nullable = false)
-    val longitude: String
-) : BaseEntity()
+    var longitude: String? = null
+}

@@ -11,19 +11,20 @@ import org.springframework.web.bind.annotation.*
 class UserController @Autowired constructor(
     private val userApplication: UserApplication
 ) {
-
     @GetMapping
-    fun getAllUsers(): List<User> = userApplication.getAllUsers()
+    fun getAllUsers(): List<User> {
+        return userApplication.getAll()
+    }
 
     @GetMapping("/{id}")
     fun getUserById(@PathVariable id: Long): ResponseEntity<User> {
-        val user = userApplication.getUserById(id) ?: return ResponseEntity.notFound().build()
+        val user = userApplication.getById(id) ?: return ResponseEntity.notFound().build()
         return ResponseEntity.ok(user)
     }
 
     @PostMapping
     fun createUser(@RequestBody user: User): ResponseEntity<User> {
-        val createdUser = userApplication.createUser(user)
+        val createdUser = userApplication.create(user)
         return ResponseEntity.ok(createdUser)
     }
 
@@ -32,13 +33,13 @@ class UserController @Autowired constructor(
         @PathVariable id: Long,
         @RequestBody userDetails: User
     ): ResponseEntity<User> {
-        val updatedUser = userApplication.updateUser(id, userDetails) ?: return ResponseEntity.notFound().build()
+        val updatedUser = userApplication.update(id, userDetails) ?: return ResponseEntity.notFound().build()
         return ResponseEntity.ok(updatedUser)
     }
 
     @DeleteMapping("/{id}")
     fun deleteUser(@PathVariable id: Long): ResponseEntity<Void> {
-        return if (userApplication.deleteUser(id)) {
+        return if (userApplication.delete(id)) {
             ResponseEntity.noContent().build()
         } else {
             ResponseEntity.notFound().build()

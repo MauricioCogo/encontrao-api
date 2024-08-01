@@ -5,33 +5,34 @@ import java.math.BigDecimal
 
 @Entity
 @Table(name = "commission")
-data class Commission(
+class Commission() : BaseEntity() {
     @Column(name = "id_competitions_teams", nullable = false)
-    val idCompetitionsTeams: Long,
+    var idCompetitionsTeams: Long? = null
 
     @Column(name = "id_user", nullable = false)
-    val idUser: Long,
+    var idUser: Long? = null
 
     @Column(name = "grade_1", nullable = false, precision = 10, scale = 2)
-    val grade1: BigDecimal?,
+    var grade1: BigDecimal? = null
 
     @Column(name = "grade_2", nullable = false, precision = 10, scale = 2)
-    val grade2: BigDecimal?,
+    var grade2: BigDecimal? = null
 
     @Column(name = "grade_3", nullable = false, precision = 10, scale = 2)
-    val grade3: BigDecimal?,
+    var grade3: BigDecimal? = null
 
     @Column(name = "grade_4", nullable = false, precision = 10, scale = 2)
-    val grade4: BigDecimal?,
+    var grade4: BigDecimal? = null
 
-    @Column(name = "grade_5", nullable = false, precision = 10, scale = 2)
-    val grade5: BigDecimal?,
+    @Column(name = "grade_5", precision = 10, scale = 2)
+    var grade5: BigDecimal? = null
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_user", referencedColumnName = "id", insertable = false, updatable = false)
-    val user: User,
+    var user: User? = null
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_competitions_teams", referencedColumnName = "id", insertable = false, updatable = false)
-    val competitionsTeams: CompetitionTeam
-) : BaseEntity()
+    var competitionsTeams: CompetitionsTeams? = null;
+
+}

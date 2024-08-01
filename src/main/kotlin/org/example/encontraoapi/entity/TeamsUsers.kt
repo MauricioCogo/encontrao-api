@@ -4,18 +4,18 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "teams_users")
-data class TeamUser(
+class TeamsUsers() : BaseEntity() {
     @Column(name = "id_user", nullable = false)
-    val idUser: Long,
+    var idUser: Long? = null
 
     @Column(name = "id_team", nullable = false)
-    val idTeam: Long,
+    var idTeam: Long? = null
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_user", referencedColumnName = "id", insertable = false, updatable = false)
-    val user: User,
+    var user: User? = null
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_team", referencedColumnName = "id", insertable = false, updatable = false)
-    val team: Team
-) : BaseEntity()
+    var team: Team? = null
+}

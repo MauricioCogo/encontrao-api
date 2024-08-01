@@ -4,26 +4,26 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "campus")
-data class Campus(
+class Campus() : BaseEntity() {
     @Column(name = "institution", nullable = false)
-    val institution: String,
+    var institution: String? = null
 
     @Column(name = "coordinator_name", length = 11, nullable = false)
-    val coordinatorName: String,
+    var coordinatorName: String? = null
 
-    @Column(name = "registration", nullable = false)
-    val registration: String,
+    @Column(name = "description", nullable = false)
+    var description: String? = null
 
     @Column(name = "entity", nullable = false)
-    val entity: String,
+    var entity: String? = null
 
     @Column(name = "dormitory", nullable = false)
-    val dormitory: String,
+    var dormitory: String? = null
 
     @Column(name = "id_presentation", nullable = false)
-    val idPresentation: Long,
+    var idPresentation: Long? = null
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_presentation", referencedColumnName = "id", insertable = false, updatable = false)
-    val presentation: Presentation
-) : BaseEntity()
+    var presentation: Presentation = Presentation()
+}

@@ -2,30 +2,36 @@ package org.example.encontraoapi.entity
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
+import jakarta.persistence.Table
 
 @Entity
-data class Presentation(
+@Table(name = "presentations")
+class Presentation() : BaseEntity() {
+
+    @Column(name = "order")
+    var order: Int? = null
+
     @Column(name = "entrance_choreography")
-    val entranceChoreography: String? = null,
+    var entranceChoreography: String? = null
 
     @Column(name = "traditional_dance_1", nullable = false)
-    val traditionalDance1: String,
+    var traditionalDance1: String? = null
 
     @Column(name = "traditional_dance_2", nullable = false)
-    val traditionalDance2: String,
+    var traditionalDance2: String? = null
 
     @Column(name = "traditional_dance_3", nullable = false)
-    val traditionalDance3: String,
+    var traditionalDance3: String? = null
 
     @Column(name = "exit_choreography")
-    val exitChoreography: String? = null,
+    var exitChoreography: String? = null
 
     @Column(name = "birivas_dances_1")
-    val birivasDance1: String? = null,
+    var birivasDance1: String? = null
 
     @Column(name = "birivas_dances_2")
-    val birivasDance2: String? = null,
+    var birivasDance2: String? = null
 
     @Column(name = "birivas_dances_3")
-    val birivasDance3: String? = null
-) : BaseEntity()
+    var birivasDance3: String? = null
+}

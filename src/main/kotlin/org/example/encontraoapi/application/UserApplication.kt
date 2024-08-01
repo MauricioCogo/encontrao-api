@@ -10,30 +10,30 @@ class UserApplication @Autowired constructor(
     private val userService: UserService
 ) {
 
-    fun getAllUsers(): List<User> {
-        return userService.getAllUsers()
+    fun getAll(): List<User> {
+        return userService.getAll()
     }
 
-    fun getUserById(id: Long): User?{
-        return userService.getUserById(id)
+    fun getById(id: Long): User?{
+        return userService.getById(id)
     }
 
-    fun createUser(user: User): User {
+    fun create(user: User): User {
         try {
             if(user.cpf.isNullOrEmpty()){
                 throw Exception("cpf can not be empty")
             }
-            return userService.createUser(user)
+            return userService.create(user)
         }catch (e: Exception){
             throw e
         }
     }
 
-    fun updateUser(id: Long, userDetails: User): User? {
-        return userService.updateUser(id, userDetails)
+    fun update(id: Long, userDetails: User): User? {
+        return userService.update(id, userDetails)
     }
 
-    fun deleteUser(id: Long): Boolean {
-        return userService.deleteUser(id)
+    fun delete(id: Long): Boolean {
+        return userService.delete(id)
     }
 }

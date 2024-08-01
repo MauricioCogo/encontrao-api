@@ -10,7 +10,7 @@ import java.time.LocalDateTime
 class UserService @Autowired constructor(
     private val userRepository: UserRepository
 ) {
-    fun getAllUsers(): List<User> {
+    fun getAll(): List<User> {
         try {
             return userRepository.findAll()
         } catch (ex: Exception) {
@@ -18,7 +18,7 @@ class UserService @Autowired constructor(
         }
     }
 
-    fun getUserById(id: Long): User? {
+    fun getById(id: Long): User? {
         try {
             return userRepository.findById(id).orElse(null)
         } catch (ex: Exception) {
@@ -26,7 +26,7 @@ class UserService @Autowired constructor(
         }
     }
 
-    fun createUser(user: User): User {
+    fun create(user: User): User {
         try {
             return userRepository.save(user)
         } catch (e: Exception) {
@@ -34,7 +34,7 @@ class UserService @Autowired constructor(
         }
     }
 
-    fun updateUser(id: Long, userDetails: User): User? {
+    fun update(id: Long, userDetails: User): User? {
         try {
             val user = userRepository.findById(id).orElse(null) ?: return null
 
@@ -56,7 +56,7 @@ class UserService @Autowired constructor(
         }
     }
 
-    fun deleteUser(id: Long): Boolean {
+    fun delete(id: Long): Boolean {
         try {
             var user = userRepository.findById(id).orElse(null)
 
