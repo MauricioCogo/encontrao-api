@@ -462,8 +462,6 @@ DROP TABLE IF EXISTS teams CASCADE;
 
 DROP TABLE IF EXISTS users CASCADE;
 
-
-
 -- Tabela presentations
 INSERT INTO presentations (
     "order", "entrance_choreography", "traditional_dance_1", "traditional_dance_2",
