@@ -1,6 +1,7 @@
 package org.example.encontraoapi.entity
 
 import jakarta.persistence.*
+import java.time.LocalDateTime
 
 @Entity
 @Table(name = "competitions")
@@ -16,6 +17,9 @@ class Competition() : BaseEntity() {
 
     @Column(name = "festival_event", nullable = false)
     var festivalEvent: Boolean = false
+
+    @Column(name = "initial_date")
+    var initialDate: LocalDateTime? = null
 
     @Column(name = "participants", nullable = false)
     var participants: Int? = null

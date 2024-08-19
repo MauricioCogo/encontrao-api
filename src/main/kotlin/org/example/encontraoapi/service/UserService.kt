@@ -1,14 +1,18 @@
 package org.example.encontraoapi.service
 
+import org.example.encontraoapi.dto.User.UserDTO
+import org.example.encontraoapi.entity.Campus
 import org.example.encontraoapi.entity.User
 import org.example.encontraoapi.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
+import java.util.UUID
 
 @Service
-class UserService @Autowired constructor(
-    private val userRepository: UserRepository
+class  UserService @Autowired constructor(
+    private val userRepository: UserRepository,
+    private val fileService: FileService,
 ) {
     fun getAll(): List<User> {
         try {
@@ -26,28 +30,35 @@ class UserService @Autowired constructor(
         }
     }
 
-    fun create(user: User): User {
+    fun create(data: UserDTO): User {
         try {
+            val user = data.toEntity()
             return userRepository.save(user)
         } catch (e: Exception) {
             throw e
         }
     }
 
-    fun update(id: Long, userDetails: User): User? {
+    fun update(id: Long, data: UserDTO): User? {
         try {
             val user = userRepository.findById(id).orElse(null) ?: return null
 
+            if (data.avatar != null && data.avatar!!.isNotBlank()) {
+                val fileName = "${UUID.randomUUID()}.png"
+                val filePath = fileService.saveBase64File(data.avatar!!, fileName)
+                user.avatar = filePath
+            }
+
             val updatedUser = User().also {
                 it.id = user.id
-                it.name = userDetails.name
-                it.cpf = userDetails.cpf
-                it.registration = userDetails.registration
-                it.password = userDetails.password
-                it.roles = userDetails.roles
-                it.isEvaluator = userDetails.isEvaluator
-                it.isAdmin = userDetails.isAdmin
-                it.campus = userDetails.campus
+                it.name = data.name
+                it.cpf = data.cpf
+                it.registration = data.registration
+                it.password = data.password
+                it.roles = data.roles
+                it.isEvaluator = data.isEvaluator ?: false
+                it.isAdmin = data.isAdmin ?: false
+                it.campusId = data.campusId
             }
 
             return userRepository.save(updatedUser)

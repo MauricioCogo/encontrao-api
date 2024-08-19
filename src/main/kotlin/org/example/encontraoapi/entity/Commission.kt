@@ -4,7 +4,7 @@ import jakarta.persistence.*
 import java.math.BigDecimal
 
 @Entity
-@Table(name = "commission")
+@Table(name = "commissions")
 class Commission() : BaseEntity() {
     @Column(name = "id_competitions_teams", nullable = false)
     var idCompetitionsTeams: Long? = null
@@ -26,6 +26,21 @@ class Commission() : BaseEntity() {
 
     @Column(name = "grade_5", precision = 10, scale = 2)
     var grade5: BigDecimal? = null
+
+    @Column(name = "grade_1_name", nullable = false, precision = 10, scale = 2)
+    var nameGrade1: String? = null
+
+    @Column(name = "grade_2_name", nullable = false, precision = 10, scale = 2)
+    var nameGrade2: String? = null
+
+    @Column(name = "grade_3_name", nullable = false, precision = 10, scale = 2)
+    var nameGrade3: String? = null
+
+    @Column(name = "grade_4_name", nullable = false, precision = 10, scale = 2)
+    var nameGrade4: String? = null
+
+    @Column(name = "grade_5_name", precision = 10, scale = 2)
+    var nameGrade5: String? = null
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_user", referencedColumnName = "id", insertable = false, updatable = false)

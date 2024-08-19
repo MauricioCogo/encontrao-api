@@ -1,4 +1,4 @@
-package org.example.encontraoapi
+ package org.example.encontraoapi
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
