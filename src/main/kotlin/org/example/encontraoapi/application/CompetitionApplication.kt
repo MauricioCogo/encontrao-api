@@ -1,5 +1,6 @@
 package org.example.encontraoapi.application
 
+import org.example.encontraoapi.dto.Competition.ParticipantsDTO
 import org.example.encontraoapi.entity.Competition
 import org.example.encontraoapi.service.CompetitionService
 import org.springframework.beans.factory.annotation.Autowired
@@ -16,6 +17,14 @@ class CompetitionApplication @Autowired constructor(
 
     fun getById(id: Long): Competition?{
         return competitionService.getById(id)
+    }
+
+    fun getCommission(): List<Competition> {
+        return competitionService.getCommission()
+    }
+
+    fun getUserByCompetitionId(id: Long): List<ParticipantsDTO>{
+        return competitionService.getUserByCompetitionId(id)
     }
 
     fun create(competition: Competition): Competition {

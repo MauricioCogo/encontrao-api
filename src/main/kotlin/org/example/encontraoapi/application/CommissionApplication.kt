@@ -62,24 +62,35 @@ class CommissionApplication @Autowired constructor(
         return commissionService.delete(id)
     }
 
-    private fun validateGrade(comission: Commission){
+    private fun validateGrade(commission: Commission) {
         val max = BigDecimal(10.00)
-        val min = BigDecimal(00.00)
+        val min = BigDecimal(0.00)
 
-        if(comission.grade1!! > max || comission.grade1!! < min) {
-            throw Exception("grade one invalid")
+        // Validação para grade1
+        if (commission.grade1 < min || commission.grade1 > max) {
+            throw IllegalArgumentException("grade1 inválida. Deve estar entre $min e $max.")
         }
 
-        if(comission.grade2!! > max || comission.grade2!! < min) {
-            throw Exception("grade twe invalid")
+        // Validação para grade2
+        if (commission.grade2 < min || commission.grade2 > max) {
+            throw IllegalArgumentException("grade2 inválida. Deve estar entre $min e $max.")
         }
 
-        if(comission.grade3!! > max || comission.grade3!! < min) {
-            throw Exception("grade tree invalid")
+        // Validação para grade3
+        if (commission.grade3 < min || commission.grade3 > max) {
+            throw IllegalArgumentException("grade3 inválida. Deve estar entre $min e $max.")
         }
 
-        if(comission.grade4!! > max || comission.grade4!! < min) {
-            throw Exception("grade four invalid")
+        // Validação para grade4
+        if (commission.grade4 < min || commission.grade4 > max) {
+            throw IllegalArgumentException("grade4 inválida. Deve estar entre $min e $max.")
+        }
+
+        // Validação para grade5, se não for nula
+        if (commission.grade5 != null) {
+            if (commission.grade5!! < min || commission.grade5!! > max) {
+                throw IllegalArgumentException("grade5 inválida. Deve estar entre $min e $max.")
+            }
         }
     }
 }

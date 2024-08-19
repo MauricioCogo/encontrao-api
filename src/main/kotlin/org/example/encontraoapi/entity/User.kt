@@ -12,6 +12,9 @@ class User() : BaseEntity() {
     var cpf: String? = null
 
     @Column(nullable = false)
+    var avatar: String? = null
+
+    @Column(nullable = false)
     var registration: String? = null
 
     @Column(nullable = false)
@@ -26,7 +29,6 @@ class User() : BaseEntity() {
     @Column(name = "is_admin", nullable = false)
     var isAdmin: Boolean = false
 
-    @ManyToOne
-    @JoinColumn(name = "id_campus", referencedColumnName = "id")
-    var campus: Campus? = null
+    @Column(name = "id_campus", nullable = false)
+    var campusId: Long? = null
 }

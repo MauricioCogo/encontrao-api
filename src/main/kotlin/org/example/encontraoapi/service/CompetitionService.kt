@@ -1,14 +1,18 @@
 package org.example.encontraoapi.service
 
+import org.example.encontraoapi.dto.Competition.ParticipantsDTO
+import org.example.encontraoapi.dto.Competition.toDTO
 import org.example.encontraoapi.entity.Competition
 import org.example.encontraoapi.repository.CompetitionRepository
+import org.example.encontraoapi.repository.TeamRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 
 @Service
 class CompetitionService @Autowired constructor(
-    private val competitionRepository: CompetitionRepository
+    private val competitionRepository: CompetitionRepository,
+    private val teamRepository: TeamRepository,
 ) {
     fun getAll(): List<Competition> {
         try {
@@ -21,6 +25,27 @@ class CompetitionService @Autowired constructor(
     fun getById(id: Long): Competition? {
         try {
             return competitionRepository.findById(id).orElse(null)
+        } catch (ex: Exception) {
+            throw ex
+        }
+    }
+
+    fun getCommission(): List<Competition> {
+        try {
+            return competitionRepository.findByCommission()
+        } catch (ex: Exception) {
+            throw ex
+        }
+    }
+
+    fun getUserByCompetitionId(id: Long): List<ParticipantsDTO> {
+        try {
+            val competitions = competitionRepository.findAll()
+            val teamIds = competitionRepository.findTeamByCompetitionId(id)
+
+            val participants = teamRepository.findParticipantsByTeamId(teamIds)
+
+            return participants.map { it.toDTO() }
         } catch (ex: Exception) {
             throw ex
         }
@@ -44,6 +69,7 @@ class CompetitionService @Autowired constructor(
                 it.modality = competitionDetails.modality
                 it.description = competitionDetails.description
                 it.festivalEvent = competitionDetails.festivalEvent
+                it.initialDate = competitionDetails.initialDate
                 it.participants = competitionDetails.participants
                 it.commission = competitionDetails.commission
                 it.idPoint = competitionDetails.idPoint

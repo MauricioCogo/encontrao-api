@@ -11,65 +11,51 @@ class CommissionService @Autowired constructor(
     private val commissionRepository: CommissionRepository
 ) {
     fun getAll(): List<Commission> {
-        try {
-            return commissionRepository.findAll()
-        } catch (ex: Exception) {
-            throw ex
-        }
+        return commissionRepository.findAll()
     }
 
     fun getById(id: Long): Commission? {
-        try {
-            return commissionRepository.findById(id).orElse(null)
-        } catch (ex: Exception) {
-            throw ex
-        }
+        return commissionRepository.findById(id).orElse(null)
     }
 
     fun create(commission: Commission): Commission {
-        try {
-            return commissionRepository.save(commission)
-        } catch (e: Exception) {
-            throw e
-        }
+        return commissionRepository.save(commission)
     }
 
     fun update(id: Long, commissionDetails: Commission): Commission? {
-        try {
-            val commission = commissionRepository.findById(id).orElse(null) ?: return null
+        val commission = commissionRepository.findById(id).orElse(null) ?: return null
 
-            val updatedCommission = Commission().also {
-                it.id = commission.id
-                it.idCompetitionsTeams = commissionDetails.idCompetitionsTeams
-                it.idUser = commissionDetails.idUser
-                it.grade1 = commissionDetails.grade1
-                it.grade2 = commissionDetails.grade2
-                it.grade3 = commissionDetails.grade3
-                it.grade4 = commissionDetails.grade4
-                it.grade5 = commissionDetails.grade5
-                it.user = commissionDetails.user
-                it.competitionsTeams =  commissionDetails.competitionsTeams
-            }
-
-            return commissionRepository.save(updatedCommission)
-        } catch (ex: Exception) {
-            throw ex
+        // Atualizando diretamente as propriedades da entidade
+        commission.apply {
+            idCompetitionsTeams = commissionDetails.idCompetitionsTeams
+            idUser = commissionDetails.idUser
+            grade1 = commissionDetails.grade1
+            grade2 = commissionDetails.grade2
+            grade3 = commissionDetails.grade3
+            grade4 = commissionDetails.grade4
+            grade5 = commissionDetails.grade5
+            nameGrade1 = commissionDetails.nameGrade1
+            nameGrade2 = commissionDetails.nameGrade2
+            nameGrade3 = commissionDetails.nameGrade3
+            nameGrade4 = commissionDetails.nameGrade4
+            nameGrade5 = commissionDetails.nameGrade5
+            user = commissionDetails.user
+            competitionsTeams = commissionDetails.competitionsTeams
         }
+
+        return commissionRepository.save(commission)
     }
 
     fun delete(id: Long): Boolean {
-        try {
-            var commission = commissionRepository.findById(id).orElse(null)
+        val commission = commissionRepository.findById(id).orElse(null) ?: return false
 
-            commission.updated_by = 1
-            commission.updated = LocalDateTime.now()
-            commission.deleted = true
-
-            commissionRepository.save(commission)
-            return true
-        } catch (ex: Exception) {
-            return false
+        commission.apply {
+            updated_by = 1 // Id do usuário que realizou a atualização
+            updated = LocalDateTime.now()
+            deleted = true
         }
 
+        commissionRepository.save(commission)
+        return true
     }
 }

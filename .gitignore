@@ -37,6 +37,7 @@ out/
 .vscode/
 
 ### Kotlin ###
-.kotlin
+.kotli/
 
 /src/main/resources/application.properties
+/src/main/resources/images

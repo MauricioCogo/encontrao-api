@@ -23,6 +23,9 @@ class Presentation() : BaseEntity() {
     @Column(name = "traditional_dance_3", nullable = false)
     var traditionalDance3: String? = null
 
+    @Column(name = "traditional_dance_extra", nullable = false)
+    var traditionalDanceExtra: String? = null
+
     @Column(name = "exit_choreography")
     var exitChoreography: String? = null
 

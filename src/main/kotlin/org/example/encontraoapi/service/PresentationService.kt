@@ -45,6 +45,7 @@ class PresentationService @Autowired constructor(
                 it.traditionalDance1 = presentationDetails.traditionalDance1
                 it.traditionalDance2 = presentationDetails.traditionalDance2
                 it.traditionalDance3 = presentationDetails.traditionalDance3
+                it.traditionalDanceExtra = presentationDetails.traditionalDanceExtra
                 it.exitChoreography = presentationDetails.exitChoreography
                 it.birivasDance1 = presentationDetails.birivasDance1
                 it.birivasDance2 = presentationDetails.birivasDance2

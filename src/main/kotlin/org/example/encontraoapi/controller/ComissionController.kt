@@ -21,13 +21,13 @@ class CommissionController @Autowired constructor(
     }
 
     @PostMapping
-    fun cremateCommission(@RequestBody commission: Commission): ResponseEntity<Commission> {
-        val crematedCommission = commissionApplication.create(commission)
-        return ResponseEntity.ok(crematedCommission)
+    fun createCommission(@RequestBody commission: Commission): ResponseEntity<Commission> {
+        val createdCommission = commissionApplication.create(commission)
+        return ResponseEntity.ok(createdCommission)
     }
 
     @PutMapping("/{id}")
-    fun updmateCommission(
+    fun updateCommission(
         @PathVariable id: Long,
         @RequestBody commissionDetails: Commission
     ): ResponseEntity<Commission> {

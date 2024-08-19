@@ -1,6 +1,7 @@
 package org.example.encontraoapi.controller
 
 import org.example.encontraoapi.application.CompetitionApplication
+import org.example.encontraoapi.dto.Competition.ParticipantsDTO
 import org.example.encontraoapi.entity.Competition
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -18,6 +19,15 @@ class CompetitionController @Autowired constructor(
     fun getCompetitionById(@PathVariable id: Long): ResponseEntity<Competition> {
         val competition = competitionApplication.getById(id) ?: return ResponseEntity.notFound().build()
         return ResponseEntity.ok(competition)
+    }
+
+    @GetMapping("commission/")
+    fun getCompetitionByCommission(): List<Competition> = competitionApplication.getCommission()
+
+    @GetMapping("/participants/{id}")
+    fun getUserByCompetitionId(@PathVariable id: Long): ResponseEntity<List<ParticipantsDTO>> {
+        val participants = competitionApplication.getUserByCompetitionId(id) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(participants)
     }
 
     @PostMapping

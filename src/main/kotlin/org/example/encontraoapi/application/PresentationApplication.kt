@@ -24,14 +24,6 @@ class PresentationApplication @Autowired constructor(
                 throw Exception("traditional dance 1 can not be empty")
             }
 
-            if(presentation.traditionalDance2.isNullOrEmpty()){
-                throw Exception("traditional dance 2 can not be empty")
-            }
-
-            if(presentation.traditionalDance3.isNullOrEmpty()){
-                throw Exception("traditional dance 3 can not be empty")
-            }
-
             return presentationService.create(presentation)
         } catch (e: Exception){
             throw e

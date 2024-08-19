@@ -1,6 +1,7 @@
 package org.example.encontraoapi.controller
 
 import org.example.encontraoapi.application.UserApplication
+import org.example.encontraoapi.dto.User.UserDTO
 import org.example.encontraoapi.entity.User
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -22,18 +23,24 @@ class UserController @Autowired constructor(
         return ResponseEntity.ok(user)
     }
 
+    @GetMapping("cpf/{cpf}")
+    fun getUserByDocument(@PathVariable cpf: String): ResponseEntity<User> {
+        val user = userApplication.getByDocument(cpf) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(user)
+    }
+
     @PostMapping
-    fun createUser(@RequestBody user: User): ResponseEntity<User> {
-        val createdUser = userApplication.create(user)
+    fun createUser(@RequestBody data: UserDTO): ResponseEntity<User> {
+        val createdUser = userApplication.create(data)
         return ResponseEntity.ok(createdUser)
     }
 
     @PutMapping("/{id}")
     fun updateUser(
         @PathVariable id: Long,
-        @RequestBody userDetails: User
+        @RequestBody data: UserDTO
     ): ResponseEntity<User> {
-        val updatedUser = userApplication.update(id, userDetails) ?: return ResponseEntity.notFound().build()
+        val updatedUser = userApplication.update(id, data) ?: return ResponseEntity.notFound().build()
         return ResponseEntity.ok(updatedUser)
     }
 
