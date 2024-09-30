@@ -18,6 +18,7 @@ interface CompetitionRepository : JpaRepository<Competition, Long>{
     )
     fun findTeamByCompetitionId(competitionId : Long) : List<Long>
 
+<<<<<<< HEAD
     @Query(
         """
             SELECT *
@@ -28,4 +29,6 @@ interface CompetitionRepository : JpaRepository<Competition, Long>{
     )
     fun findByCommission() : List<Competition>
 
+=======
+>>>>>>> 506d5e9735f83d3b79b6f77c2ee9719ddca9e68f
 }

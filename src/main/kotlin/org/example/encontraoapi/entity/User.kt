@@ -29,6 +29,10 @@ class User() : BaseEntity() {
     @Column(name = "is_admin", nullable = false)
     var isAdmin: Boolean = false
 
+<<<<<<< HEAD
     @Column(name = "id_campus", nullable = false)
+=======
+    @Column(name = "campusId", nullable = false)
+>>>>>>> 506d5e9735f83d3b79b6f77c2ee9719ddca9e68f
     var campusId: Long? = null
 }

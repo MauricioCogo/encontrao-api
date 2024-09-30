@@ -30,6 +30,7 @@ class  UserService @Autowired constructor(
         }
     }
 
+<<<<<<< HEAD
     fun getByDocument(cpf: String): User? {
         try {
             return userRepository.findByDocument(cpf)
@@ -48,6 +49,11 @@ class  UserService @Autowired constructor(
                 user.avatar = filePath
             }
 
+=======
+    fun create(data: UserDTO): User {
+        try {
+            val user = data.toEntity()
+>>>>>>> 506d5e9735f83d3b79b6f77c2ee9719ddca9e68f
             return userRepository.save(user)
         } catch (e: Exception) {
             throw e

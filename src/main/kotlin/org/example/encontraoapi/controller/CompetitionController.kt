@@ -21,9 +21,12 @@ class CompetitionController @Autowired constructor(
         return ResponseEntity.ok(competition)
     }
 
+<<<<<<< HEAD
     @GetMapping("commission/")
     fun getCompetitionByCommission(): List<Competition> = competitionApplication.getCommission()
 
+=======
+>>>>>>> 506d5e9735f83d3b79b6f77c2ee9719ddca9e68f
     @GetMapping("/participants/{id}")
     fun getUserByCompetitionId(@PathVariable id: Long): ResponseEntity<List<ParticipantsDTO>> {
         val participants = competitionApplication.getUserByCompetitionId(id) ?: return ResponseEntity.notFound().build()

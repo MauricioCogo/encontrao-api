@@ -30,6 +30,7 @@ class CompetitionService @Autowired constructor(
         }
     }
 
+<<<<<<< HEAD
     fun getCommission(): List<Competition> {
         try {
             return competitionRepository.findByCommission()
@@ -38,6 +39,8 @@ class CompetitionService @Autowired constructor(
         }
     }
 
+=======
+>>>>>>> 506d5e9735f83d3b79b6f77c2ee9719ddca9e68f
     fun getUserByCompetitionId(id: Long): List<ParticipantsDTO> {
         try {
             val competitions = competitionRepository.findAll()

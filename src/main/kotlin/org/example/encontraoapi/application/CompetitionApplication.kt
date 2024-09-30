@@ -19,10 +19,13 @@ class CompetitionApplication @Autowired constructor(
         return competitionService.getById(id)
     }
 
+<<<<<<< HEAD
     fun getCommission(): List<Competition> {
         return competitionService.getCommission()
     }
 
+=======
+>>>>>>> 506d5e9735f83d3b79b6f77c2ee9719ddca9e68f
     fun getUserByCompetitionId(id: Long): List<ParticipantsDTO>{
         return competitionService.getUserByCompetitionId(id)
     }

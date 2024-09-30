@@ -1,6 +1,9 @@
 package org.example.encontraoapi.application
 
+<<<<<<< HEAD
 import org.example.encontraoapi.dto.Auth.CredentialsDTO
+=======
+>>>>>>> 506d5e9735f83d3b79b6f77c2ee9719ddca9e68f
 import org.example.encontraoapi.dto.User.UserDTO
 import org.example.encontraoapi.entity.User
 //import org.example.encontraoapi.service.AuthService
@@ -20,10 +23,13 @@ class UserApplication @Autowired constructor(
         return userService.getById(id)
     }
 
+<<<<<<< HEAD
     fun getByDocument(cpf: String): User?{
         return userService.getByDocument(cpf)
     }
 
+=======
+>>>>>>> 506d5e9735f83d3b79b6f77c2ee9719ddca9e68f
     fun create(data: UserDTO): User {
         try {
             if(data.cpf.isNullOrEmpty()){
