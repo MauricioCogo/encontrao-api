@@ -10,7 +10,7 @@ import java.time.LocalDateTime
 import java.util.UUID
 
 @Service
-class  UserService @Autowired constructor(
+class UserService @Autowired constructor(
     private val userRepository: UserRepository,
     private val fileService: FileService,
 ) {
@@ -30,7 +30,6 @@ class  UserService @Autowired constructor(
         }
     }
 
-<<<<<<< HEAD
     fun getByDocument(cpf: String): User? {
         try {
             return userRepository.findByDocument(cpf)
@@ -48,12 +47,6 @@ class  UserService @Autowired constructor(
                 val filePath = fileService.saveBase64File(data.avatar!!, fileName)
                 user.avatar = filePath
             }
-
-=======
-    fun create(data: UserDTO): User {
-        try {
-            val user = data.toEntity()
->>>>>>> 506d5e9735f83d3b79b6f77c2ee9719ddca9e68f
             return userRepository.save(user)
         } catch (e: Exception) {
             throw e
@@ -63,7 +56,6 @@ class  UserService @Autowired constructor(
     fun update(id: Long, data: UserDTO): User? {
         try {
             val user = userRepository.findById(id).orElse(null) ?: return null
-
             if (data.avatar != null && data.avatar!!.isNotBlank()) {
                 val fileName = "${UUID.randomUUID()}.png"
                 val filePath = fileService.saveBase64File(data.avatar!!, fileName)
@@ -101,6 +93,5 @@ class  UserService @Autowired constructor(
         } catch (ex: Exception) {
             return false
         }
-
     }
 }

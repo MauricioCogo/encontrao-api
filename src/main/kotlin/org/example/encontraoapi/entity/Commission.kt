@@ -5,12 +5,8 @@ import java.math.BigDecimal
 
 @Entity
 @Table(name = "commissions")
-<<<<<<< HEAD
 class Commission : BaseEntity() {
 
-=======
-class Commission() : BaseEntity() {
->>>>>>> 506d5e9735f83d3b79b6f77c2ee9719ddca9e68f
     @Column(name = "id_competitions_teams", nullable = false)
     var idCompetitionsTeams: Long? = null
 
@@ -45,21 +41,6 @@ class Commission() : BaseEntity() {
     var nameGrade4: String? = null
 
     @Column(name = "grade_name_5")
-    var nameGrade5: String? = null
-
-    @Column(name = "grade_1_name", nullable = false, precision = 10, scale = 2)
-    var nameGrade1: String? = null
-
-    @Column(name = "grade_2_name", nullable = false, precision = 10, scale = 2)
-    var nameGrade2: String? = null
-
-    @Column(name = "grade_3_name", nullable = false, precision = 10, scale = 2)
-    var nameGrade3: String? = null
-
-    @Column(name = "grade_4_name", nullable = false, precision = 10, scale = 2)
-    var nameGrade4: String? = null
-
-    @Column(name = "grade_5_name", precision = 10, scale = 2)
     var nameGrade5: String? = null
 
     @ManyToOne(fetch = FetchType.LAZY)

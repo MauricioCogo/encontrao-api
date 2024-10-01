@@ -1,42 +1,35 @@
 package org.example.encontraoapi.application
 
-<<<<<<< HEAD
-import org.example.encontraoapi.dto.Auth.CredentialsDTO
-=======
->>>>>>> 506d5e9735f83d3b79b6f77c2ee9719ddca9e68f
 import org.example.encontraoapi.dto.User.UserDTO
 import org.example.encontraoapi.entity.User
-//import org.example.encontraoapi.service.AuthService
 import org.example.encontraoapi.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
 class UserApplication @Autowired constructor(
-    private val userService: UserService, ) {
+    private val userService: UserService
+) {
 
     fun getAll(): List<User> {
         return userService.getAll()
     }
 
-    fun getById(id: Long): User?{
+    fun getById(id: Long): User? {
         return userService.getById(id)
     }
 
-<<<<<<< HEAD
-    fun getByDocument(cpf: String): User?{
+    fun getByDocument(cpf: String): User? {
         return userService.getByDocument(cpf)
     }
 
-=======
->>>>>>> 506d5e9735f83d3b79b6f77c2ee9719ddca9e68f
     fun create(data: UserDTO): User {
         try {
-            if(data.cpf.isNullOrEmpty()){
+            if (data.cpf.isNullOrEmpty()) {
                 throw Exception("cpf can not be empty")
             }
             return userService.create(data)
-        }catch (e: Exception){
+        } catch (e: Exception) {
             throw e
         }
     }
