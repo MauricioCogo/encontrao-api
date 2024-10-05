@@ -1,6 +1,9 @@
 package org.example.encontraoapi.application
 
+import org.example.encontraoapi.dto.Commission.CommissionDTO
+import org.example.encontraoapi.dto.UpdateCommissionAndTeamRequest
 import org.example.encontraoapi.entity.Commission
+import org.example.encontraoapi.entity.Team
 import org.example.encontraoapi.service.CommissionService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
@@ -15,47 +18,55 @@ class CommissionApplication @Autowired constructor(
         return commissionService.getAll()
     }
 
-    fun getById(id: Long): Commission?{
+    fun getById(id: Long): Commission? {
         return commissionService.getById(id)
+    }
+
+    fun getByIdTeam(id: Long): CommissionDTO? {
+        return commissionService.getByIdTeam(id)
     }
 
     fun create(commission: Commission): Commission {
         try {
 
-            if(commission.idCompetitionsTeams == null){
+            if (commission.idCompetitionsTeams == null) {
                 throw Exception("id competitions teams can not be empty")
             }
 
-            if(commission.idUser == null){
+            if (commission.idUser == null) {
                 throw Exception("id user name can not be empty")
             }
 
-            if(commission.grade1 == null){
+            if (commission.grade1 == null) {
                 throw Exception("description can not be empty")
             }
 
-            if(commission.grade2 == null){
+            if (commission.grade2 == null) {
                 throw Exception("entity can not be empty")
             }
 
-            if(commission.grade3 == null){
+            if (commission.grade3 == null) {
                 throw Exception("dormitory can not be empty")
             }
 
-            if(commission.grade4 == null){
+            if (commission.grade4 == null) {
                 throw Exception("idPresentation can not be empty")
             }
 
             validateGrade(commission)
 
             return commissionService.create(commission)
-        } catch (e: Exception){
+        } catch (e: Exception) {
             throw e
         }
     }
 
     fun update(id: Long, commissionDetails: Commission): Commission? {
         return commissionService.update(id, commissionDetails)
+    }
+
+    fun updateTeam(id: Long, request: UpdateCommissionAndTeamRequest): Pair<Commission?, Team?>? {
+        return commissionService.updateByTeam(id, request)
     }
 
     fun delete(id: Long): Boolean {

@@ -1,10 +1,11 @@
 package org.example.encontraoapi.service
 
+import UserDetailsDTO
 import org.example.encontraoapi.entity.CompetitionsTeams
-
 import org.example.encontraoapi.repository.CompetitionsTeamsRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import toDTO
 import java.time.LocalDateTime
 
 @Service
@@ -26,6 +27,15 @@ class CompetitionsTeamsService @Autowired constructor(
             throw ex
         }
     }
+
+    fun getByCompetition(id_competi: Long): List<UserDetailsDTO>? {
+        return try {
+            competitionsTeamsRepository.findStudentDetailsByCompetitionId(id_competi)?.map { it.toDTO() }
+        } catch (ex: Exception) {
+            throw ex
+        }
+    }
+
 
     fun create(competitionsTeams: CompetitionsTeams): CompetitionsTeams {
         try {

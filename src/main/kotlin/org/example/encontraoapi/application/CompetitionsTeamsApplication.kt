@@ -1,5 +1,6 @@
 package org.example.encontraoapi.application
 
+import UserDetailsDTO
 import org.example.encontraoapi.entity.CompetitionsTeams
 import org.example.encontraoapi.service.CompetitionsTeamsService
 import org.springframework.beans.factory.annotation.Autowired
@@ -14,22 +15,26 @@ class CompetitionsTeamsApplication @Autowired constructor(
         return competitionsTeamsService.getAll()
     }
 
-    fun getById(id: Long): CompetitionsTeams?{
+    fun getById(id: Long): CompetitionsTeams? {
         return competitionsTeamsService.getById(id)
+    }
+
+    fun getByCompetition(id_competi: Long): List<UserDetailsDTO>? {
+        return competitionsTeamsService.getByCompetition(id_competi)
     }
 
     fun create(competitionsTeams: CompetitionsTeams): CompetitionsTeams {
         try {
-            if(competitionsTeams.idTeam == null){
+            if (competitionsTeams.idTeam == null) {
                 throw Exception("id team can not be empty")
             }
 
-            if(competitionsTeams.idCompetition == null){
+            if (competitionsTeams.idCompetition == null) {
                 throw Exception("id competition name can not be empty")
             }
 
             return competitionsTeamsService.create(competitionsTeams)
-        } catch (e: Exception){
+        } catch (e: Exception) {
             throw e
         }
     }

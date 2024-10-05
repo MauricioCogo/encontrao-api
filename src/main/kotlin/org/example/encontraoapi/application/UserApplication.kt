@@ -19,8 +19,8 @@ class UserApplication @Autowired constructor(
         return userService.getById(id)
     }
 
-    fun getByDocument(cpf: String): User? {
-        return userService.getByDocument(cpf)
+    fun getByDocument(cpf: String): UserDTO? {
+        return userService.getUserWithCampusById(cpf)
     }
 
     fun create(data: UserDTO): User {

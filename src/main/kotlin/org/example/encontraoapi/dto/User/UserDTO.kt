@@ -7,12 +7,13 @@ interface MinifiedUserProjection {
     val name: String?
     val cpf: String?
     val avatar: String?
-    val isEvaluator: Boolean?
-    val isAdmin: Boolean?
+    val password: String?
+    val evaluator: Boolean?
+    val admin: Boolean?
     val roles: String?
     val campusId: Long?
     val registration: String?
-
+    val campus: String?
 }
 
 data class UserDTO(
@@ -25,7 +26,8 @@ data class UserDTO(
     var roles: String? = null,
     var isEvaluator: Boolean? = null,
     var isAdmin: Boolean? = null,
-    var campusId: Long? = null
+    var campusId: Long? = null,
+    var campus: String? = null,
 ) {
     constructor(data: User) : this(
         id = data.id,
@@ -59,11 +61,12 @@ fun MinifiedUserProjection.toDTO(): UserDTO {
         name = this.name,
         avatar = this.avatar,
         cpf = this.cpf,
-        isEvaluator = this.isEvaluator,
-        isAdmin = this.isAdmin,
+        password = this.password,
+        isEvaluator = this.evaluator,
+        isAdmin = this.admin,
         roles = this.roles,
         campusId = this.campusId,
         registration = this.registration,
-
+        campus = this.campus,
     )
 }

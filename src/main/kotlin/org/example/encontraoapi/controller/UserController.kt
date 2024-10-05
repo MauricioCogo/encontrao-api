@@ -24,7 +24,7 @@ class UserController @Autowired constructor(
     }
 
     @GetMapping("cpf/{cpf}")
-    fun getUserByDocument(@PathVariable cpf: String): ResponseEntity<User> {
+    fun getUserByDocument(@PathVariable cpf: String): ResponseEntity<UserDTO> {
         val user = userApplication.getByDocument(cpf) ?: return ResponseEntity.notFound().build()
         return ResponseEntity.ok(user)
     }
