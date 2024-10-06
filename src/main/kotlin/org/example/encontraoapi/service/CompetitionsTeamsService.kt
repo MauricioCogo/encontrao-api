@@ -36,6 +36,13 @@ class CompetitionsTeamsService @Autowired constructor(
         }
     }
 
+    fun getAllParticipantsByCompetition(id_competi: Long): List<UserDetailsDTO>? {
+        return try {
+            competitionsTeamsRepository.findParticipantsByCompetition(id_competi)?.map { it.toDTO() }
+        } catch (ex: Exception) {
+            throw ex
+        }
+    }
 
     fun create(competitionsTeams: CompetitionsTeams): CompetitionsTeams {
         try {

@@ -23,6 +23,10 @@ class CompetitionsTeamsApplication @Autowired constructor(
         return competitionsTeamsService.getByCompetition(id_competi)
     }
 
+    fun getAllParticipantsByCompetition(id_competi: Long): List<UserDetailsDTO>? {
+        return competitionsTeamsService.getAllParticipantsByCompetition(id_competi)
+    }
+
     fun create(competitionsTeams: CompetitionsTeams): CompetitionsTeams {
         try {
             if (competitionsTeams.idTeam == null) {

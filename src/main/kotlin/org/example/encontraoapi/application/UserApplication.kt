@@ -38,6 +38,10 @@ class UserApplication @Autowired constructor(
         return userService.update(id, data)
     }
 
+    fun updateImage(id: Long, data: UserDTO): User? {
+        return userService.updateImage(id, data)
+    }
+
     fun delete(id: Long): Boolean {
         return userService.delete(id)
     }

@@ -15,6 +15,9 @@ class Timeline() : BaseEntity() {
     @Column(name = "date", nullable = false)
     var date: LocalDateTime? = null
 
+    @Column(name = "type", nullable = false)
+    var type: String? = null
+
     @Column(name = "id_point", nullable = false)
     var idPoint: Long? = null
 

@@ -22,9 +22,17 @@ class CompetitionsTeamsController @Autowired constructor(
     }
 
     @GetMapping("competition/{id}")
-    fun getCompetitionsTeamByCompetition(@PathVariable id: Long): ResponseEntity<List<UserDetailsDTO>> {
+    fun getCompetitionsTeamByCompetitionID(@PathVariable id: Long): ResponseEntity<List<UserDetailsDTO>> {
         val competitionsTeams =
             competitionsTeamsApplication.getByCompetition(id) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(competitionsTeams)
+    }
+
+    @GetMapping("participants/{id}")
+    fun getCompetitionsTeamByCompetition(@PathVariable id: Long): ResponseEntity<List<UserDetailsDTO>> {
+        println(id)
+        val competitionsTeams =
+            competitionsTeamsApplication.getAllParticipantsByCompetition(id) ?: return ResponseEntity.notFound().build()
         return ResponseEntity.ok(competitionsTeams)
     }
 

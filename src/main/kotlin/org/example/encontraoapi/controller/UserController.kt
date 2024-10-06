@@ -44,6 +44,15 @@ class UserController @Autowired constructor(
         return ResponseEntity.ok(updatedUser)
     }
 
+    @PutMapping("image/{id}")
+    fun updateImage(
+        @PathVariable id: Long,
+        @RequestBody data: UserDTO
+    ): ResponseEntity<User> {
+        val updatedUser = userApplication.updateImage(id, data) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(updatedUser)
+    }
+
     @DeleteMapping("/{id}")
     fun deleteUser(@PathVariable id: Long): ResponseEntity<Void> {
         return if (userApplication.delete(id)) {
