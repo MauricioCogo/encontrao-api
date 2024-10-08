@@ -20,6 +20,12 @@ class PointController @Autowired constructor(
         return ResponseEntity.ok(point)
     }
 
+    @GetMapping("type/{type}")
+    fun getPointByType(@PathVariable type: String): ResponseEntity<List<Point>> {
+        val point = pointApplication.getByType(type) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(point)
+    }
+
     @PostMapping
     fun createPoint(@RequestBody point: Point): ResponseEntity<Point> {
         val createdPoint = pointApplication.create(point)

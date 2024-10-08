@@ -1,5 +1,7 @@
 package org.example.encontraoapi.service
 
+import org.example.encontraoapi.dto.Presentations.PresentationDTO
+import org.example.encontraoapi.dto.Presentations.toDTO
 import org.example.encontraoapi.entity.Presentation
 import org.example.encontraoapi.repository.PresentationRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -21,6 +23,14 @@ class PresentationService @Autowired constructor(
     fun getById(id: Long): Presentation? {
         try {
             return presentationRepository.findById(id).orElse(null)
+        } catch (ex: Exception) {
+            throw ex
+        }
+    }
+
+    fun getAllWithCampus(): List<PresentationDTO>? {
+        try {
+            return presentationRepository.findAllWithCampus().map { it.toDTO() }
         } catch (ex: Exception) {
             throw ex
         }

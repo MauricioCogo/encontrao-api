@@ -1,5 +1,6 @@
 package org.example.encontraoapi.application
 
+import org.example.encontraoapi.dto.Presentations.PresentationDTO
 import org.example.encontraoapi.entity.Presentation
 import org.example.encontraoapi.service.PresentationService
 import org.springframework.beans.factory.annotation.Autowired
@@ -14,18 +15,22 @@ class PresentationApplication @Autowired constructor(
         return presentationService.getAll()
     }
 
-    fun getById(id: Long): Presentation?{
+    fun getById(id: Long): Presentation? {
         return presentationService.getById(id)
+    }
+
+    fun getAllWithCampus(): List<PresentationDTO>? {
+        return presentationService.getAllWithCampus()
     }
 
     fun create(presentation: Presentation): Presentation {
         try {
-            if(presentation.traditionalDance1.isNullOrEmpty()){
+            if (presentation.traditionalDance1.isNullOrEmpty()) {
                 throw Exception("traditional dance 1 can not be empty")
             }
 
             return presentationService.create(presentation)
-        } catch (e: Exception){
+        } catch (e: Exception) {
             throw e
         }
     }
