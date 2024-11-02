@@ -8,9 +8,9 @@ services:
     ports:
       - '9090:8080'
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://192.168.1.23:5432/encontrao
+      SPRING_DATASOURCE_URL: jdbc:postgresql://18.230.94.178:5432/postgres
       SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: 123
+      SPRING_DATASOURCE_PASSWORD: F5224s18uyPDvi@qbf
       SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: public
 
 
