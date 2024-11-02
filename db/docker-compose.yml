@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: encontrao_postgres
+    environment:
+      POSTGRES_DB: encontrao_api
+      POSTGRES_USER: encontrao_user
+      POSTGRES_PASSWORD: kVcJmOXbw_6PoeDPifhtaIf3W0dEVNh7G5h_hK3Z8Xs
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  pgdata:
+    driver: local
+
+# Gera uma senha aleatória para o usuário e a armazena em um arquivo .env
