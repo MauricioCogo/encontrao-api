@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Construindo o projeto
-RUN gradle build --no-daemon
+RUN gradle build --parallel --no-daemon --profile
 
 # Usando uma imagem leve do OpenJDK para rodar a aplicação
 FROM openjdk:17
