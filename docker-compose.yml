@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    ports:
+      - '9090:8080'
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: F5224s18uyPDvi@qbf
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: public
+    networks:
+      - minha_rede
+
+  postgres:
+    image: postgres:latest
+    container_name: db
+    ports:
+      - '5431:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: F5224s18uyPDvi@qbf
+      POSTGRES_DB: postgres
+    volumes:
+      - encontrao_pg_data:/var/lib/postgresql/data
+    networks:
+      - minha_rede
+
+volumes:
+  encontrao_pg_data:
+
+networks:
+  minha_rede:
