@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=F5224s18uyPDvi@qbf
+      - POSTGRES_DB=postgres
+    volumes:
+      - encontrao_pg_data:/var/lib/postgresql/data
+
+
+volumes:
+  encontrao_pg_data:
