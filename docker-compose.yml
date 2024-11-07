@@ -4,7 +4,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: infra/backend/Dockerfile
     container_name: app
     ports:
       - '9090:8080'

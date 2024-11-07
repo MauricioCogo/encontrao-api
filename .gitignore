@@ -4,6 +4,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+infra/backend/encontrao-api-0.0.1-SNAPSHOT.jar
 
 ### STS ###
 .apt_generated
