@@ -24,7 +24,7 @@ class UserController @Autowired constructor(
     }
 
     @GetMapping("cpf/{cpf}")
-    fun getUserByDocument(@PathVariable cpf: String): ResponseEntity<User> {
+    fun getUserByDocument(@PathVariable cpf: String): ResponseEntity<UserDTO> {
         val user = userApplication.getByDocument(cpf) ?: return ResponseEntity.notFound().build()
         return ResponseEntity.ok(user)
     }
@@ -41,6 +41,15 @@ class UserController @Autowired constructor(
         @RequestBody data: UserDTO
     ): ResponseEntity<User> {
         val updatedUser = userApplication.update(id, data) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(updatedUser)
+    }
+
+    @PutMapping("image/{id}")
+    fun updateImage(
+        @PathVariable id: Long,
+        @RequestBody data: UserDTO
+    ): ResponseEntity<User> {
+        val updatedUser = userApplication.updateImage(id, data) ?: return ResponseEntity.notFound().build()
         return ResponseEntity.ok(updatedUser)
     }
 

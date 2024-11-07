@@ -14,42 +14,46 @@ class PointApplication @Autowired constructor(
         return pointService.getAll()
     }
 
-    fun getById(id: Long): Point?{
+    fun getById(id: Long): Point? {
         return pointService.getById(id)
+    }
+
+    fun getByType(type: String): List<Point>? {
+        return pointService.getByType(type)
     }
 
     fun create(point: Point): Point {
         try {
-            if(point.name.isNullOrEmpty()){
+            if (point.name.isNullOrEmpty()) {
                 throw Exception("name can not be empty")
             }
 
-            if(point.type.isNullOrEmpty()){
+            if (point.type.isNullOrEmpty()) {
                 throw Exception("type can not be empty")
             }
 
-            if(point.description.isNullOrEmpty()){
+            if (point.description.isNullOrEmpty()) {
                 throw Exception("description can not be empty")
             }
 
-            if(point.description.isNullOrEmpty()){
+            if (point.description.isNullOrEmpty()) {
                 throw Exception("description can not be empty")
             }
 
-            if(point.icon.isNullOrEmpty()){
+            if (point.icon.isNullOrEmpty()) {
                 throw Exception("icon can not be empty")
             }
 
-            if(point.latitude == null){
+            if (point.latitude == null) {
                 throw Exception("latitude can not be empty")
             }
 
-            if(point.longitude == null){
+            if (point.longitude == null) {
                 throw Exception("longitude can not be empty")
             }
 
             return pointService.create(point)
-        } catch (e: Exception){
+        } catch (e: Exception) {
             throw e
         }
     }

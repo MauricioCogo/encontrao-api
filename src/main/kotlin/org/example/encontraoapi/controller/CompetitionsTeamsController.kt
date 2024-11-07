@@ -1,5 +1,7 @@
 package org.example.encontraoapi.controller
 
+import FecultDTO
+import UserDetailsDTO
 import org.example.encontraoapi.application.CompetitionsTeamsApplication
 import org.example.encontraoapi.entity.CompetitionsTeams
 import org.springframework.beans.factory.annotation.Autowired
@@ -20,6 +22,27 @@ class CompetitionsTeamsController @Autowired constructor(
         return ResponseEntity.ok(competitionsTeams)
     }
 
+    @GetMapping("competition/{id}")
+    fun getCompetitionsTeamByCompetitionID(@PathVariable id: Long): ResponseEntity<List<UserDetailsDTO>> {
+        val competitionsTeams =
+            competitionsTeamsApplication.getByCompetition(id) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(competitionsTeams)
+    }
+
+    @GetMapping("participants/{id}")
+    fun getCompetitionsTeamByCompetition(@PathVariable id: Long): ResponseEntity<List<UserDetailsDTO>> {
+        val competitionsTeams =
+            competitionsTeamsApplication.getAllParticipantsByCompetition(id) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(competitionsTeams)
+    }
+
+    @GetMapping("fecult")
+    fun getCompetitionsTeamByFecult(): ResponseEntity<List<FecultDTO>> {
+        val competitionsTeams =
+            competitionsTeamsApplication.getByFecult() ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(competitionsTeams)
+    }
+
     @PostMapping
     fun createCompetitionsTeams(@RequestBody competitionsTeams: CompetitionsTeams): ResponseEntity<CompetitionsTeams> {
         val createdCompetitionsTeams = competitionsTeamsApplication.create(competitionsTeams)
@@ -31,7 +54,9 @@ class CompetitionsTeamsController @Autowired constructor(
         @PathVariable id: Long,
         @RequestBody competitionsTeamsDetails: CompetitionsTeams
     ): ResponseEntity<CompetitionsTeams> {
-        val updatedCompetitionsTeams = competitionsTeamsApplication.update(id, competitionsTeamsDetails) ?: return ResponseEntity.notFound().build()
+        val updatedCompetitionsTeams =
+            competitionsTeamsApplication.update(id, competitionsTeamsDetails) ?: return ResponseEntity.notFound()
+                .build()
         return ResponseEntity.ok(updatedCompetitionsTeams)
     }
 

@@ -1,13 +1,13 @@
 package org.example.encontraoapi.service
 
 import org.example.encontraoapi.dto.User.UserDTO
-import org.example.encontraoapi.entity.Campus
+import org.example.encontraoapi.dto.User.toDTO
 import org.example.encontraoapi.entity.User
 import org.example.encontraoapi.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
-import java.util.UUID
+import java.util.*
 
 @Service
 class UserService @Autowired constructor(
@@ -33,6 +33,14 @@ class UserService @Autowired constructor(
     fun getByDocument(cpf: String): User? {
         try {
             return userRepository.findByDocument(cpf)
+        } catch (ex: Exception) {
+            throw ex
+        }
+    }
+
+    fun getUserWithCampusById(cpf: String): UserDTO? {
+        try {
+            return userRepository.findUserWithCampusById(cpf)?.toDTO()
         } catch (ex: Exception) {
             throw ex
         }
@@ -79,6 +87,26 @@ class UserService @Autowired constructor(
             throw ex
         }
     }
+
+    fun updateImage(id: Long, data: UserDTO): User? {
+        try {
+            // Recupera o usuário existente
+            val user = userRepository.findById(id).orElse(null) ?: return null
+
+            // Gera um novo nome de arquivo e salva o avatar
+            val fileName = "${UUID.randomUUID()}.png"
+            val filePath = fileService.saveBase64File(data.avatar!!, fileName)
+
+            // Atualiza a propriedade avatar do usuário existente
+            user.avatar = filePath
+
+            // Salva e retorna o usuário atualizado
+            return userRepository.save(user) // Salva a mesma instância com as propriedades atualizadas
+        } catch (ex: Exception) {
+            throw ex
+        }
+    }
+
 
     fun delete(id: Long): Boolean {
         try {

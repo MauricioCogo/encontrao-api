@@ -11,13 +11,13 @@ services:
       - "8080:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=prod
-      - DATABASE_URL=jdbc:postgresql://encontrao_postgres:5432/encontrao_api
-      - DATABASE_USERNAME=encontrao_user
-      - DATABASE_PASSWORD=kVcJmOXbw_6PoeDPifhtaIf3W0dEVNh7G5h_hK3Z8Xs
+      - DATABASE_URL=jdbc:postgresql://localhost:5432/encontrao_api
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=F5224s18uyPDvi@qbf
     depends_on:
       - wait-for-db
 
   wait-for-db:
     image: alpine:latest
     container_name: wait-for-db
-    entrypoint: ["sh", "-c", "until nc -z encontrao_postgres 5432; do echo 'Waiting for database...'; sleep 3; done; echo 'Database is ready!'"]
+    entrypoint: [ "sh", "-c", "until nc -z encontrao_postgres 5432; do echo 'Waiting for database...'; sleep 3; done; echo 'Database is ready!'" ]

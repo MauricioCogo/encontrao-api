@@ -26,6 +26,14 @@ class PointService @Autowired constructor(
         }
     }
 
+    fun getByType(type: String): List<Point>? {
+        try {
+            return pointRepository.findByType(type)
+        } catch (ex: Exception) {
+            throw ex
+        }
+    }
+
     fun create(point: Point): Point {
         try {
             return pointRepository.save(point)

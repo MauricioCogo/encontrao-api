@@ -1,5 +1,6 @@
 package org.example.encontraoapi.application
 
+import org.example.encontraoapi.dto.Timeline.TimelineDTO
 import org.example.encontraoapi.entity.Timeline
 import org.example.encontraoapi.service.TimelineService
 import org.springframework.beans.factory.annotation.Autowired
@@ -14,30 +15,34 @@ class TimelineApplication @Autowired constructor(
         return timelineService.getAll()
     }
 
-    fun getById(id: Long): Timeline?{
+    fun getById(id: Long): Timeline? {
         return timelineService.getById(id)
+    }
+
+    fun getAllByIdUser(id: Long): List<TimelineDTO>? {
+        return timelineService.getAllByIdUser(id)
     }
 
     fun create(timeline: Timeline): Timeline {
         try {
-            if(timeline.name.isNullOrEmpty()){
+            if (timeline.name.isNullOrEmpty()) {
                 throw Exception("name can not be empty")
             }
 
-            if(timeline.date == null){
+            if (timeline.date == null) {
                 throw Exception("date can not be empty")
             }
 
-            if(timeline.idPoint == null){
+            if (timeline.idPoint == null) {
                 throw Exception("id point can not be empty")
             }
 
-            if(timeline.idCompetition == null){
+            if (timeline.idCompetition == null) {
                 throw Exception("id competition can not be empty")
             }
 
             return timelineService.create(timeline)
-        } catch (e: Exception){
+        } catch (e: Exception) {
             throw e
         }
     }
