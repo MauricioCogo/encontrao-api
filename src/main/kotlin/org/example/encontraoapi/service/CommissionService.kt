@@ -1,14 +1,21 @@
 package org.example.encontraoapi.service
 
+import org.example.encontraoapi.dto.Commission.CommissionDTO
+import org.example.encontraoapi.dto.Commission.CommissionGradeTeamDTO
+import org.example.encontraoapi.dto.Commission.toDTO
+import org.example.encontraoapi.dto.UpdateCommissionAndTeamRequest
 import org.example.encontraoapi.entity.Commission
+import org.example.encontraoapi.entity.Team
 import org.example.encontraoapi.repository.CommissionRepository
+import org.example.encontraoapi.repository.TeamRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 
 @Service
 class CommissionService @Autowired constructor(
-    private val commissionRepository: CommissionRepository
+    private val commissionRepository: CommissionRepository,
+    private val teamRepository: TeamRepository
 ) {
     fun getAll(): List<Commission> {
         return commissionRepository.findAll()
@@ -16,6 +23,14 @@ class CommissionService @Autowired constructor(
 
     fun getById(id: Long): Commission? {
         return commissionRepository.findById(id).orElse(null)
+    }
+
+    fun getByIdTeam(id: Long): CommissionDTO? {
+        return commissionRepository.findByIdTeam(id).toDTO()
+    }
+
+    fun getGradeByIdTeam(id: Long): List<CommissionGradeTeamDTO>? {
+        return commissionRepository.findGradeByIdTeam(id).map { it.toDTO() }
     }
 
     fun create(commission: Commission): Commission {
@@ -44,6 +59,33 @@ class CommissionService @Autowired constructor(
         }
 
         return commissionRepository.save(commission)
+    }
+
+    fun updateByTeam(id: Long, details: UpdateCommissionAndTeamRequest): Pair<Commission?, Team?>? {
+        val commission = commissionRepository.findById(id).orElse(null) ?: return Pair(null, null)
+
+        // Atualizando diretamente as propriedades da entidade
+        commission.apply {
+            idCompetitionsTeams = details.commission.idCompetitionsTeams
+            idUser = details.commission.idUser
+            grade1 = details.commission.grade1
+            grade2 = details.commission.grade2
+            grade3 = details.commission.grade3
+            grade4 = details.commission.grade4
+            grade5 = details.commission.grade5
+        }
+
+        val updatedCommission = commissionRepository.save(commission)
+
+        val team =
+            details.team.id?.let { teamRepository.findById(it).orElse(null) } ?: return Pair(updatedCommission, null)
+        team.apply {
+            grade = details.team.grade
+        }
+
+        val updatedTeam = teamRepository.save(team)
+
+        return Pair(updatedCommission, updatedTeam)
     }
 
     fun delete(id: Long): Boolean {

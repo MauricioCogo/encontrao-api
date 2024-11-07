@@ -19,6 +19,9 @@ class Point() : BaseEntity() {
     @Column(name = "icon", nullable = false)
     var icon: String? = null
 
+    @Column(name = "size", nullable = false)
+    var size: Int? = null
+
     @Column(name = "latitude", nullable = false)
     var latitude: String? = null
 

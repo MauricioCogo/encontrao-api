@@ -1,5 +1,7 @@
 package org.example.encontraoapi.service
 
+import org.example.encontraoapi.dto.Timeline.TimelineDTO
+import org.example.encontraoapi.dto.Timeline.toDTO
 import org.example.encontraoapi.entity.Timeline
 import org.example.encontraoapi.repository.TimelineRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -21,6 +23,14 @@ class TimelineService @Autowired constructor(
     fun getById(id: Long): Timeline? {
         try {
             return timelineRepository.findById(id).orElse(null)
+        } catch (ex: Exception) {
+            throw ex
+        }
+    }
+
+    fun getAllByIdUser(id: Long): List<TimelineDTO>? {
+        try {
+            return timelineRepository.findAllByIdUser(id).map { it.toDTO() };
         } catch (ex: Exception) {
             throw ex
         }

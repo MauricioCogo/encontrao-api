@@ -1,10 +1,12 @@
 package org.example.encontraoapi.service
 
+import FecultDTO
+import UserDetailsDTO
 import org.example.encontraoapi.entity.CompetitionsTeams
-
 import org.example.encontraoapi.repository.CompetitionsTeamsRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import toDTO
 import java.time.LocalDateTime
 
 @Service
@@ -22,6 +24,30 @@ class CompetitionsTeamsService @Autowired constructor(
     fun getById(id: Long): CompetitionsTeams? {
         try {
             return competitionsTeamsRepository.findById(id).orElse(null)
+        } catch (ex: Exception) {
+            throw ex
+        }
+    }
+
+    fun getByCompetition(id_competi: Long): List<UserDetailsDTO>? {
+        return try {
+            competitionsTeamsRepository.findStudentDetailsByCompetitionId(id_competi)?.map { it.toDTO() }
+        } catch (ex: Exception) {
+            throw ex
+        }
+    }
+
+    fun getByFecult(): List<FecultDTO>? {
+        return try {
+            competitionsTeamsRepository.findParticipantsByFecult()?.map { it.toDTO() }
+        } catch (ex: Exception) {
+            throw ex
+        }
+    }
+
+    fun getAllParticipantsByCompetition(id_competi: Long): List<UserDetailsDTO>? {
+        return try {
+            competitionsTeamsRepository.findParticipantsByCompetition(id_competi)?.map { it.toDTO() }
         } catch (ex: Exception) {
             throw ex
         }

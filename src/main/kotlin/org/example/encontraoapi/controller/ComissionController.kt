@@ -1,7 +1,11 @@
 package org.example.encontraoapi.controller
 
 import org.example.encontraoapi.application.CommissionApplication
+import org.example.encontraoapi.dto.Commission.CommissionDTO
+import org.example.encontraoapi.dto.Commission.CommissionGradeTeamDTO
+import org.example.encontraoapi.dto.UpdateCommissionAndTeamRequest
 import org.example.encontraoapi.entity.Commission
+import org.example.encontraoapi.entity.Team
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -20,6 +24,18 @@ class CommissionController @Autowired constructor(
         return ResponseEntity.ok(commission)
     }
 
+    @GetMapping("byteam/{id}")
+    fun getCommissionNameByIdTeam(@PathVariable id: Long): ResponseEntity<CommissionDTO> {
+        val commission = commissionApplication.getByIdTeam(id) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(commission)
+    }
+
+    @GetMapping("grade/{id}")
+    fun getGradeByIdTeam(@PathVariable id: Long): ResponseEntity<List<CommissionGradeTeamDTO>> {
+        val commission = commissionApplication.getGradeByIdTeam(id) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(commission)
+    }
+
     @PostMapping
     fun createCommission(@RequestBody commission: Commission): ResponseEntity<Commission> {
         val createdCommission = commissionApplication.create(commission)
@@ -31,7 +47,18 @@ class CommissionController @Autowired constructor(
         @PathVariable id: Long,
         @RequestBody commissionDetails: Commission
     ): ResponseEntity<Commission> {
-        val updatedCommission = commissionApplication.update(id, commissionDetails) ?: return ResponseEntity.notFound().build()
+        val updatedCommission =
+            commissionApplication.update(id, commissionDetails) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(updatedCommission)
+    }
+
+    @PatchMapping("add/{id}")
+    fun updateCommissionAndTeams(
+        @PathVariable id: Long,
+        @RequestBody details: UpdateCommissionAndTeamRequest
+    ): ResponseEntity<Pair<Commission?, Team?>> {
+        val updatedCommission =
+            commissionApplication.updateTeam(id, details) ?: return ResponseEntity.notFound().build()
         return ResponseEntity.ok(updatedCommission)
     }
 

@@ -1,0 +1,279 @@
+name,cpf,avatar,registration,password,roles,id_campus
+Alana Benites Sturza,04586975083,null,2023301742,04586975083,Aluno,1
+Alana dos Santos Cabreira,05022330016,null,2024304201,05022330016,Aluno,1
+Amanda Fiber Badinelli,05296937004,null,2023300048,05296937004,Aluno,1
+Amanda Nunes de Mattos,87960427020,null,2023301798,87960427020,Aluno,1
+Ana Luisa Rumpel Muscato,03609155078,null,2023307970,03609155078,Aluno,1
+Antonela Oliveira da Rosa Godoi,03444831005,null,2024306402,03444831005,Aluno,1
+Bruna Sturza Brum,04397889007,null,2024316875,04397889007,Aluno,1
+Camili Toffolo,10054424950,null,2023321861,10054424950,Aluno,1
+Endrius Vidal dos Santos Brum,04953175000,null,2024306500,04953175000,Aluno,1
+Évellyn Leal Fernandes,03784283063,null,2023305492,03784283063,Aluno patrão,1
+Gabriel Cargnin Nicoli,04342019019,null,2022308112,04342019019,Aluno,1
+Gabriela Pfeifer de Carvalho,03307578065,null,2024322291,03307578065,Aluno,1
+Gabrielle Algayer Lemos Hubner,04267776032,null,2024304711,04267776032,Aluno,1
+Giani Vitória Ribeiro Quadros,04713158003,null,2024306930,04713158003,Aluno,1
+Isaboo Acosta Alcântara,04223568020,null,2024011219,04223568020,Aluno,1
+João Pedro de Mora Faete,03447498005,null,2024322550,03447498005,Aluno,1
+João Pedro Souza Cogo,04742586026,null,2024307689,04742586026,Aluno,1
+João Vitor de Vieira de Amorin,04978380014,null,2024308640,04978380014,Aluno,1
+Joao Vitor Homrich da Silva,04456293047,null,2024012870,04456293047,Aluno,1
+Kauan Diniz Bresulin,04902160056,null,2024313434,04902160056,Aluno,1
+Kaue do Pilar Olegario,05196948058,null,2024313612,05196948058,Aluno,1
+Ketlyn Roci Jacobsen Rodrigues,05879109097,null,2024325239,05879109097,Aluno,1
+Leticia da Costa Teixeira,02751413064,null,2023309811,02751413064,Aluno,1
+Letícia Fernanda Silva Puhl,03078254003,null,2024015620,03078254003,Aluno,1
+Luandra Benites Sturza,04586982020,null,2024014909,04586982020,Aluno,1
+Maria Eduarda Ilarreguy da Silva,04342647095,null,2023302409,04342647095,Aluno,1
+Mariana de Brito Belmonte,04010894016,null,2024305782,04010894016,Aluno,1
+Marysol Santos Dias,04698462088,null,2024322916,04698462088,Aluno,1
+Maurício Carvalho Cogo,05415375040,macaco.png,2023001236,05415375040,Aluno,1
+Mayalu Sbicigo Faria,04698462088,null,2024322916,04698462088,Aluno,1
+Nicolas Vidal dos Santos Brum,04953190076,null,2023301054,04953190076,Aluno,1
+Pedro Bertoldo Pinto,02482537002,null,2024011943,02482537002,Aluno,1
+Pedro Rodrigo Oliveira Fonceca,04023715000,null,2023303139,04023715000,Aluno patrão,1
+Raelle Souza Mendes,03444832079,null,2023302919,03444832079,Aluno,1
+Rafael Gonçalves Da Silva,05271420000,null,2024313120,05271420000,Aluno,1
+Rafaela Oliveira da Rosa Godoi,04621807005,null,2024318987,04621807005,Aluno,1
+Renan Douglas De Souza,06162423018,null,2023302875,06162423018,Aluno,1
+Simone Pereira Gibicoski,04621807005,null,2024318987,04621807005,Aluno,1
+Stéfano Tronco Lamana,03732848027,null,2024010866,03732848027,Aluno,1
+Talita Suellen de Oliveira,06933640094,null,2024318824,06933640094,Aluno,1
+Welingtom Erdmann Corrêa,04820085031,null,2024306369,04820085031,Aluno,1
+Wesllen Naysinger dos Santos,04918799035,null,2023308458,04918799035,Aluno,1
+Yani Kamili Camargo Wagner,03732189074,null,2023323599,03732189074,Aluno,1
+Eduardo Rafael Miranda Feitoza,70194459187,null,null,70194459187,Coordenador,1
+Cynthia Gindri Haigert,94632278068,null,null,94632278068,Responsável,1
+Patrick Marquezini da Silva,00302055061,null,null,00302055061,Instrutor,1
+Viviane Bilhalba Cruz,96624744049,null,1874767,96624744049,Coordenador,2
+Gabriele Gomes Mota,4038593010,null,2022306600,4038593010,Instrutor,2
+Pablo Fernando Rodrigues,4040527038,null,2020316287,4040527038,Aluno Patrão,2
+Diogo Canabarro Soclari,1129538706,null,2024016752,1129538706,Aluno,2
+Andrio Franco Alves Silva,1116358308,null,2017010338,1116358308,Aluno,2
+Taini dos Santos Krug,3675448061,null,2022322701,3675448061,Aluno,2
+Wendel Fabrício Tavares,4383353096,null,2029305976,4383353096,Aluno,2
+Milena Sanches Chagas,6345456047,null,20243260167,6345456047,Aluno,2
+Gésica Renata Castro Viana,60307210030,null,2024317934,60307210030,Aluno,2
+Tailane Santos,39254119047,null,2024326165,39254119047,Aluno,2
+Vitor Luis Severo da Costa,6564056001,null,2024304195,6564056001,Aluno,2
+Rafaelly da Costa,3673957031,null,2024305020,3673957031,Aluno,2
+Arthur Aranguis Beker,5992643060,null,2024304471,5992643060,Aluno,2
+Juliane Dorneles,6540054009,null,2022307901,6540054009,Aluno,2
+Eduarda Giudici Bajon,4357611024,null,2023318552,4357611024,Aluno,2
+Gabriel Almeida Bilhalba,4201673073,null,2024009032,4201673073,Aluno,2
+Mariana Carla Braun Bile,4765809005,null,2024302520,4765809005,Aluno,2
+Milena Altamiranda,597369099,null,2023323632,597369099,Aluno,2
+João Eduardo Sagrillo,04611540057,null,2024308588,04611540057,Aluno,2
+Wesley Ferreira de Aquino,6856843003,null,2024326430,6856843003,Aluno,2
+Elielson Rodrigues Guedes,4930381088,null,2022305578,4930381088,Aluno,2
+Letícia Silva Romero,6861279005,null,2022322668,6861279005,Aluno,2
+Ana Mariane Rodrigues de Oliveira,5660249000,null,2022305980,5660249000,Aluno,2
+Sérgio Lima de Souza Júnior,3887157079,null,2020322730,3887157079,Aluno,2
+Denis Moacir de Paula Júnior,3166491040,null,2022306543,3166491040,Aluno,2
+Vitor Samuel de Moura da Silva,4640598017,null,2022307465,4640598017,Aluno,2
+Andriélly Dias Karzewski,8117464811,null,2022320126,8117464811,Aluno,2
+Vitório Correa Bianchin,4105297917,null,2024008616,4105297917,Aluno,2
+Samuel da Silva Romero,5856466004,null,202330551,5856466004,Aluno,2
+Henrique Antunez Rodrigues,4812027063,null,2024309217,4812027063,Aluno,2
+Izabel Michel Melo,4283876089,null,2022322846,4283876089,Aluno,2
+Suelen Valau,953829090,null,1758678,953829090,Responsável,2
+Cleusa Fagundes,45593760004,null,1214689,45593760004,Responsável,2
+Ketlen Oliveira de Vargas,4920986033,null,20243007811,4920986033,Aluno,2
+Vitória Flores dos Santos,6343111077,null,2024304097,6343111077,Aluno,2
+Jady Mota Queiroz,4241377091,null,202305630,4241377091,Aluno,2
+Luiz Fabiano Martins Scola,6705369035,null,2023318875,6705369035,Aluno,2
+Manoella Mitidieri Afonso,4224030080,null,2024307606,4224030080,Aluno,2
+Gustavo Schimitz,5397066044,null,2024323440,5397066044,Aluno,2
+Suélen Bianca da Silva,5142024545,null,2022322176,5142024545,Aluno,2
+Tiago Margutti Prates,04594445063,null,2023318098,04594445063,Aluno,2
+Naeli Meus Alves Carneiro,3975226064,null,2021008980,3975226064,Aluno,2
+Natani Gonçalves Padilha,1810123089,null,2021303720,1810123089,Aluno,2
+Ana Rita Costenaro Parizzi,196551005,null,1788545,196551005,Diretora,2
+Darla Silveira Volcan Maia,2933880083,null,3082569,2933880083,Servidora,2
+Pietro de Souza,2865638006,null,2023323641,2865638006,Aluno,2
+Mikael Prestes,4662479070,null,2021306857,4662479070,Aluno,2
+Edevandro Sabino da Silva,00056884001,null,1919480,00056884001,Coordenador,3
+Daniele Uhlmann Anacleto,01701768003,null,2612812,01701768003,Responsável,3
+Lázaro Santos Souza,82806110025,null,3296077,82806110025,Responsável,3
+Bruno Eduardo dos Santos Rangel Ramos,03706606097,null,2022312741,03706606097,Aluno Patrão,3
+Stella Maria de Bona Schwarzbold,03271394040,null,2023316600,03271394040,Aluna Patroa,3
+Allana Knorst Wicrzbicki,03179005017,null,2024306019,03179005017,Aluno,3
+Amanda Solivo,04597263071,null,2024306073,04597263071,Aluno,3
+Ana Julia Probst,02926532040,null,2023318392,02926532040,Aluno,3
+Gustavo Zanella,03937449060,null,2023324335,03937449060,Aluno,3
+Higor Bueno da Silva,03163190073,null,2024308274,03163190073,Aluno,3
+Kauan Della Flora Maciel,04805813040,null,2022316428,04805813040,Aluno,3
+Lázaro Benício Cardinal Kessler,05912336069,null,2023317967,05912336069,Aluno,3
+Leonardo Padilha da Silva,02791744037,null,2022312518,02791744037,Aluno,3
+Matheus Lorenson,03606765029,null,2023318349,03606765029,Aluno,3
+Milena Ludvig Werner,03413450085,null,2023316353,03413450085,Aluno,3
+Nicolas Felipe Vargas,02908515059,null,2023319291,02908515059,Aluno,3
+Paula Aparecida Felimberti Gonzatto,03184369064,null,2023317279,03184369064,Aluno,3
+Rafaela Giacobo Bottega,03660376094,null,2024312885,03660376094,Aluno,3
+Rafaeli Aparecida Vargas de Moura,03179390093,null,2024304524,03179390093,Aluno,3
+Rhyã Samuel dos Reis Vargas,03956914007,null,2022314648,03956914007,Aluno,3
+Victor Rodrigues Cardinal,03949033076,null,2021310831,03949033076,Aluno,3
+Bruno Eduardo dos Santos Rangel Ramos,03706606097,null,2022312741,03706606097,Aluno,3
+Stella Maria de Bona Schwarzbold,03271394040,null,2023316600,03271394040,Aluno,3
+Jair Matias da Rosa,96029226053,null,1982917,96029226053,Coordenador,4
+Elisete Cardoso Dos Santos,56987407091,null,null,56987407091,Responsável,4
+Rosa Comin Paggi,03825848051,null,null,03825848051,Instrutor,4
+Laudra Caroline Pouluk Strozak,null,null,03702488057,03702488057,Aluna Patroa,4
+Eduardo Fernando Stroeher,02160744018,null,202320170208,02160744018,Aluno,4
+Lucas André Pouluk Strozak,05315804070,null,202410010250,05315804070,Aluno,4
+Lucas Waldemiro Luchese,04649469058,null,202310010399,04649469058,Aluno,4
+Evilin Andreia Vigo,03428839099,null,202410010072,03428839099,Aluno,4
+Vitor Piletti Franzolozo,02947732073,null,202320170046,02947732073,Aluno,4
+Elisa Ficagna,03772863035,null,202310010283,03772863035,Aluno,4
+Kamile Boeira da Silva,03508654001,null,202310010437,03508654001,Aluno,4
+Ana Júlia Cardoso Dos Santos,05824651094,null,202310010585,05824651094,Aluno,4
+Ana Caroline Beal Barcelos,03347977050,null,202410010021,03347977050,Aluno,4
+Eduardo Ferreira Ludwig,05129314026,null,202310100065,05129314026,Aluno,4
+Luiza Marcolin Dall’Oglio,03015705075,null,202410010277,03015705075,Aluno,4
+Ramiro Rodrigues Ferreira,03012680020,null,202410010307,03012680020,Aluno,4
+Vitor Ismael Baldissarelli Miotto,03505739057,null,202410010358,03505739057,Aluno,4
+Felipe Tomasi,03033389031,null,202310010356,03033389031,Aluno,4
+Júlia Orso,03163805043,null,null,03163805043,Aluno,4
+Rodrigo Dallé Berselli,02700911067,null,202320170224,02700911067,Aluno,4
+Natalia Menin,02735198081,null,202310010046,02735198081,Aluno,4
+Natã Castilhos,04649813018,null,null,04649813018,Aluno,4
+Ismael Gomes da Silveira,02226224076,null,202410170037,02226224076,Aluno,4
+Teresa Enderle,04103280069,null,null,04103280069,Aluno,4
+Nicolle Pedruzzi da Silva,04939362035,null,202210010214,04939362035,Aluno,4
+Frantchesca Sperotto Glanert,04077886031,null,202410010544,04077886031,Aluno,4
+Davi Cézar da Silva,80195857020,null,1085049,80195857020,Coordenador,5
+Eliana Silva da Silva,00713956100,null,1194601,00713956100,Responsável,5
+Geraldo José Rodrigues,00352997036,null,1391828,00352997036,Responsável,5
+João Batista Gonçalves Jacques,00383735998,null,2023006312,00383735998,Instrutor,5
+Gabriel Diogo dos Santos,11696808952,null,2022308112,11696808952,Aluno Patrão,5
+Lívia Alves de Macedo,10598845933,null,2022310863,10598845933,Aluna Patroa,5
+Antonio Cézar Perrando da Silva,30311578004,null,null,30311578004,Grupo Vocal (Gaiteiro),5
+Camili Roxo Machado,11017101957,null,2023304154,11017101957,Aluno,5
+Eloisa Luz Carlos,04993792093,null,2024320724,04993792093,Aluno,5
+Erick Heidemann Schlickmann,11539271951,null,2024320896,11539271951,Aluno,5
+Gabriel Dos Santos da Silva,10519601939,null,2023314025,10519601939,Aluno,5
+Giane Righez de Assunção,03699802043,null,2021308477,03699802043,Aluno,5
+Ivan da Cruz Melo,04828249052,null,2024017277,04828249052,Aluno,5
+Jean Carlos Barbosa,11962784908,null,2023302276,11962784908,Aluno,5
+João Manoel C. Bitencourt,05343752004,null,2021322761,05343752004,Aluno,5
+Julia Damiani Velho,04383200001,null,2023309286,04383200001,Aluno,5
+Lara Maciel da Silva,12092667920,null,2023006401,12092667920,Aluno,5
+Letícia Américo de Freitas,14828724982,null,2022302988,14828724982,Aluno,5
+Letícia Correa Rabello,12407035976,null,2023303157,12407035976,Aluno,5
+Lívia Selau Bellettini,11532493916,null,2022318763,11532493916,Aluno,5
+Luiza Santos da Silva,04791952006,null,2022308220,04791952006,Aluno,5
+Maria Eduarda Scheffer Machado,06649886017,null,2023303504,06649886017,Aluno,5
+Natália Oliveira Ferreira,04681943045,null,2024321973,04681943045,Aluno,5
+Olívia Ré Warmling,12762255988,null,2022313373,12762255988,Aluno,5
+Pâmela Santos do Canto,04079953070,null,2023309240,04079953070,Aluno,5
+Pietra Smania Spader,09957457900,null,2023383350,09957457900,Aluno,5
+Rafaela Reis,04514070084,null,2023311112,04514070084,Aluno,5
+Rayssa Fernandes Pinow,12162443910,null,2023322949,12162443910,Aluno,5
+Talia Gabrieli R. Ré,11981110976,null,2023303827,11981110976,Aluno,5
+Victor Ângelo Aita dos Santos,03315610002,null,2024321614,03315610002,Aluno,5
+Dagmar Pedro Tamanho,01702832082,null,1916911,01702832082,Coordenador,6
+Ivone Taderka,69262977034,null,1874599,69262977034,Coordenadora,6
+Fernando Folle Sertoli,60065826000,null,1105879,60065826000,Motorista,6
+Wagner Marangon,04473707075,null,184233,04473707075,Aluno Patrão,6
+Rafaela Schmittz Irschlinger,03218250048,null,103209,03218250048,Aluna Patroa,6
+Ana Clara Marmentini,04935388013,null,0080241,04935388013,Aluno,6
+Arthur Nunes Pagotto,02716678006,null,0006238,02716678006,Aluno,6
+Bruno Iagor Giacomin,04288647088,null,0085243,04288647088,Aluno,6
+Daiane Feles,04662063051,null,0090247,04662063051,Aluno,6
+Dara Del Osbel Vieira da Silva,03503325093,null,0093246,03503325093,Aluno,6
+Eduarda Da Silva Bohrer,05663178007,null,0191230,05663178007,Aluno,6
+Endrio Nunes Pagotto,03816917054,null,0146242,03816917054,Aluno,6
+Jaime Donato Guarienti Filho,05094745000,null,0151220,05094745000,Aluno,6
+Jordano Guarnieri,04579374088,null,2022308613,04579374088,Aluno,6
+Laís Cimarosti de Oliveira,03024936033,null,0060240,03024936033,Aluno,6
+Marlon Dorigon,04150799008,null,0053236,04150799008,Aluno,6
+Nathiane Isabela de Quadros Barea,05445660095,null,0071242,05445660095,Aluno,6
+Nicolas Luz da Rosa,06368801093,null,2023316870,06368801093,Aluno,6
+Pietro Daniel Gorardo,03093471060,null,0039241,03093471060,Aluno,6
+Sofia Pastorello,43300534895,null,2023303738,43300534895,Aluno,6
+Thalita Anhaia,03549709099,null,0001228,03549709099,Aluno,6
+Vanessa Basso de Oliveira,04155951002,null,2023317439,04155951002,Aluno,6
+Gustavo Zago,11460902939,null,2022319303,11460902939,Aluno,8
+Emily Cristina Sarmento,13532977990,null,2022317971,13532977990,Aluno,8
+Gabriela Cristina Prigol,13073204903,null,2023306758,13073204903,Aluno,8
+Luana Brancaleoni,11379732930,null,2022313758,11379732930,Aluno,8
+Joana Tragancin Thomé,11449437958,null,2024316777,11449437958,Aluno,8
+Stephan Heckel,12849914908,null,,12849914908,Aluno,8
+Nykolas Heckel,14140876913,null,2023324738,14140876913,Aluno,8
+Ana Júlia Ferreira Vieira,13402367963,null,2024315081,13402367963,Aluno,8
+Rafaela Scolaro,10853436932,null,2023319827,10853436932,Aluno,8
+Samuel Borga Farina,09443325950,null,2023317902,09443325950,Aluno,8
+Gabrielli Panceri Araldi,11496707974,null,2024310325,11496707974,Aluno,8
+Amanda Moresco,11548553921,null,2024315090,11548553921,Aluno,8
+Gabriela jakobczinsky,13811899970,null,2024316552,13811899970,Aluno,8
+Tainá Guarnieri,09936142993,null,2023317439,09936142993,Aluno,8
+Gabriel Borin Thibes de Campos,10864561903,null,2022317873,10864561903,Aluno,8
+Amanda Vitória da Silva,11942694946,null,2023316450,11942694946,Aluno,8
+Maria Isadora Braghini Sabadin,14600357981,null,2023322288,14600357981,Aluno,8
+Izabel Bertha,11483142965,null,2022320126,11483142965,Aluno,8
+Letícia Brancher Louzada,11312864990,null,2023316932,11312864990,Aluno,8
+Isabela Oliveira,12235433901,null,2023318178,12235433901,Aluno,8
+Matheus Ferronato,08480373911,null,2022313963,08480373911,Aluno,8
+Roger Cantelli,08210700960,null,2023332303,08210700960,Aluno,8
+Ana Clara Deon Treis,12913234909,null,2023314947,12913234909,Aluno,8
+Maria Eduarda Alves Xavier,01223649962,null,2023322312,01223649962,Aluno,8
+João Henrique Breyer,11137503912,null,2022319330,11137503912,Aluno,8
+Guilherme dos Santos Getassi,13805294921,null,2022318191,13805294921,Aluno,8
+André Leonardo Rubini,09739839908,null,,09739839908,Responsável,8
+José Augustho Lippert,9615062960,null,,9615062960,Aluno,8
+Andrei Seidel,9718464999,null,,9718464999,Aluno,8
+Gabriel Betiato,11399648950,null,,11399648950,Aluno,8
+Silvia Marina Rigo,05747828932,null,1904894,05747828932,Coordenadora,8
+Graciele Hilda Welter,97119849034,null,2757216,97119849034,Coordenador,9
+Roberto Preussler,92387136004,null,1755239,92387136004,Responsável,9
+Gianna Kettner de Carvalho,82038180059,null,null,82038180059,Instrutor,9
+Matheus Reichert Engelmann,04633133055,null,2023303120,04633133055,Aluno Patrão,9
+Amanda Vitória Diniz,03932432061,null,2022317078,03932432061,Aluna Patroa,9
+Amanda Marchiori,88997928015,null,2022311468,88997928015,Aluno,9
+Amanda de Almeida Massaia,03472895098,null,2023302472,03472895098,Aluno,9
+Ana Flávia Londero De Costa,04349193065,null,2024300220,04349193065,Aluno,9
+Ana Laura Engel da Silva,03137419050,null,2023008068,03137419050,Aluno,9
+Bianca Morais Fabriz,05209623033,null,2024300409,05209623033,Aluno,9
+Bruno Mombach Weber,03644755019,null,2024302056,03644755019,Aluno,9
+Cassiano Gerhardt Rambo,03061743081,null,2024300454,03061743081,Aluno,9
+Cristine Zottis Schelp,03552236007,null,2025300507,03552236007,Aluno,9
+Djenifer Gerhardt Rambo,03061745025,null,2024302145,03061745025,Aluno,9
+Elisa Zamin Garrido,03379913081,null,2024300561,03379913081,Aluno,9
+Gabriely Knack,05842293056,null,2022310362,05842293056,Aluno,9
+Giovana Vitória Abadi,03846654035,null,2022317855,03846654035,Aluno,9
+Guilherme Eduardo Soares da Silva,03529974005,null,2022315476,03529974005,Aluno,9
+Gustavo Gabriel Petry Eberhardt,04881422022,null,2023303961,04881422022,Aluno,9
+Isabeli Pazini,02585276090,null,2022317873,02585276090,Aluno,9
+Isabel Zimmer Weber,03888902070,null,2023302070,03888902070,Aluno,9
+Kamile Schimitz Sapieczinski,03060547017,null,2023325593,03060547017,Aluno,9
+Lara Aniele Scheffler,05130432096,null,2024304177,05130432096,Aluno,9
+Mateus Puhl Schneider,03449937014,null,2024302680,03449937014,Aluno,9
+Mateus Heck da Rosa,05091201050,null,2023303021,05091201050,Aluno,9
+Matheus da Silva Stein,04941946006,null,2023320247,04941946006,Aluno,9
+Nicole Gräf,02538464048,null,2023304332,02538464048,Aluno,9
+Samara Prates dos Santos,04464038069,null,2024301148,04464038069,Aluno,9
+Victor Renan,03990070088,null,2024008124,03990070088,Aluno,9
+Sheila Carletto,00669228958,null,1754831,00669228958,Coordenador,10
+Samuel Groselli Boschi,06812314919,null,2022000851,06812314919,Aluno Patrão,10
+Kayla Bianca Venceslau de Abreu,13316896945,null,2022306584,13316896945,Aluna Patroa,10
+Antonio Marcos Alves,08433421590,null,2376870,08433421590,Motorista,10
+Osvaldo Bluning,02925143598,null,2174058,02925143598,Motorista,10
+Gustavo Hames,01350006190,null,2024307992,01350006190,Aluno,10
+Ana Luiza Matos Rahn,09681220943,null,2024308229,09681220943,Aluno,10
+Vitor Stradioto Guimarães,11517678919,null,2024305343,11517678919,Aluno,10
+Vitor Dums,08617272902,null,2023318688,08617272902,Aluno,10
+Milena Loesch de Oliveira,09742839913,null,2023302810,09742839913,Aluno,10
+Maria Luiza de Souza,11022791966,null,2023307380,11022791966,Aluno,10
+Bárbara Valentina Reinerdt,15534673966,null,2023313823,15534673966,Aluno,10
+Carlos Eduardo Bona,11024533905,null,2024306912,11024533905,Aluno,10
+Caroline Erkamann,14965539931,null,2024309520,14965539931,Aluno,10
+Tobias Bach,11059816903,null,2024301792,11059816903,Aluno,10
+Rubia Basquerote Mendes,10502150955,null,2024312722,10502150955,Aluno,10
+Nilva Maria Possamai,14054411940,null,2024313953,14054411940,Aluno,10
+Vinicius Gorges Barbosa,12104706912,null,2024312820,12104706912,Aluno,10
+Daniel Affonso de Oliveira,13692327994,null,2023318955,13692327994,Aluno,10
+Felipe Padilha Nesi,06971553900,null,2022008573,06971553900,Aluno,10
+Gabrielle Luiza Alves,13166986960,null,2024317184,13166986960,Aluno,10
+Emanuelle Gauer Bevilacqua,12257489926,null,2023303273,12257489926,Aluno,10
+Sidnéia aparecida Siqueira Alves,04696741990,null,null,04696741990,Colaboradora,10
+Victória de Souza Cardoso,08564621959,null,null,08564621959,Colaboradora,10

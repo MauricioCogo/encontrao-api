@@ -19,8 +19,8 @@ class UserApplication @Autowired constructor(
         return userService.getById(id)
     }
 
-    fun getByDocument(cpf: String): User? {
-        return userService.getByDocument(cpf)
+    fun getByDocument(cpf: String): UserDTO? {
+        return userService.getUserWithCampusById(cpf)
     }
 
     fun create(data: UserDTO): User {
@@ -36,6 +36,10 @@ class UserApplication @Autowired constructor(
 
     fun update(id: Long, data: UserDTO): User? {
         return userService.update(id, data)
+    }
+
+    fun updateImage(id: Long, data: UserDTO): User? {
+        return userService.updateImage(id, data)
     }
 
     fun delete(id: Long): Boolean {

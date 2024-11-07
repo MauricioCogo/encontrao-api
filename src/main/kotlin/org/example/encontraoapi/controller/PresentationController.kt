@@ -1,6 +1,7 @@
 package org.example.encontraoapi.controller
 
 import org.example.encontraoapi.application.PresentationApplication
+import org.example.encontraoapi.dto.Presentations.PresentationDTO
 import org.example.encontraoapi.entity.Presentation
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -20,6 +21,12 @@ class PresentationController @Autowired constructor(
         return ResponseEntity.ok(presentation)
     }
 
+    @GetMapping("campus/")
+    fun getPresentationByIdWithCampus(): ResponseEntity<List<PresentationDTO>> {
+        val presentation = presentationApplication.getAllWithCampus() ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(presentation)
+    }
+
     @PostMapping
     fun createPresentation(@RequestBody presentation: Presentation): ResponseEntity<Presentation> {
         val createdPresentation = presentationApplication.create(presentation)
@@ -31,7 +38,8 @@ class PresentationController @Autowired constructor(
         @PathVariable id: Long,
         @RequestBody presentationDetails: Presentation
     ): ResponseEntity<Presentation> {
-        val updatedPresentation = presentationApplication.update(id, presentationDetails) ?: return ResponseEntity.notFound().build()
+        val updatedPresentation =
+            presentationApplication.update(id, presentationDetails) ?: return ResponseEntity.notFound().build()
         return ResponseEntity.ok(updatedPresentation)
     }
 

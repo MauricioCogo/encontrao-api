@@ -1,6 +1,7 @@
 package org.example.encontraoapi.controller
 
 import org.example.encontraoapi.application.TimelineApplication
+import org.example.encontraoapi.dto.Timeline.TimelineDTO
 import org.example.encontraoapi.entity.Timeline
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -20,6 +21,12 @@ class TimelineController @Autowired constructor(
         return ResponseEntity.ok(timeline)
     }
 
+    @GetMapping("user/{id}")
+    fun getTimelineByUserId(@PathVariable id: Long): ResponseEntity<List<TimelineDTO>> {
+        val timeline = timelineApplication.getAllByIdUser(id) ?: return ResponseEntity.notFound().build()
+        return ResponseEntity.ok(timeline)
+    }
+
     @PostMapping
     fun createTimeline(@RequestBody timeline: Timeline): ResponseEntity<Timeline> {
         val createdTimeline = timelineApplication.create(timeline)
@@ -31,7 +38,8 @@ class TimelineController @Autowired constructor(
         @PathVariable id: Long,
         @RequestBody timelineDetails: Timeline
     ): ResponseEntity<Timeline> {
-        val updatedTimeline = timelineApplication.update(id, timelineDetails) ?: return ResponseEntity.notFound().build()
+        val updatedTimeline =
+            timelineApplication.update(id, timelineDetails) ?: return ResponseEntity.notFound().build()
         return ResponseEntity.ok(updatedTimeline)
     }
 
