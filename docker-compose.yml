@@ -21,7 +21,7 @@ services:
     image: postgres:latest
     container_name: db
     ports:
-      - '5431:5432'
+      - '5432:5432'
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: F5224s18uyPDvi@qbf
