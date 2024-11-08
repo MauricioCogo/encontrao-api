@@ -60,15 +60,15 @@ WHERE
         JOIN 
             campus cs ON u.id_campus = cs.id
         WHERE 
-            c.id = :teamId
+            c.id = :competitionId  -- Alterando para competitionId como parâmetro correto
             AND c.deleted = FALSE
             AND u.deleted = FALSE
         GROUP BY 
-            c.id, c.name, cs.institution, t.grade
+            c.id, c.name, cs.institution, t.id, t.grade  -- Agrupar também por t.id para garantir múltiplos registros por equipe
         ORDER BY 
             t.grade DESC;
     """, nativeQuery = true
     )
-    fun findGradeByIdTeam(@Param("teamId") teamId: Long): List<CommissionGradeTeamDTOMinifiedProjection>
+    fun findGradeByIdTeam(@Param("competitionId") competitionId: Long): List<CommissionGradeTeamDTOMinifiedProjection>
 
 }

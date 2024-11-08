@@ -20,19 +20,22 @@
 //
 //        return http.build()
 //    }
-////
-////    @Bean
-////    fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
-////        http
-////            .csrf { it.disable() } // Desabilita proteção CSRF, já que usamos tokens
-////            .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) } // Sem sessões, o estado é mantido no token
-////            .authorizeHttpRequests { auth ->
-////                auth
-////                    .requestMatchers("/**").permitAll() // Permitir acesso público apenas à rota de login
-////                    .anyRequest().authenticated() // Qualquer outra rota precisa de autenticação
-////            }
-////            .addFilterBefore(BearerTokenFilter(), UsernamePasswordAuthenticationFilter::class.java) // Filtro para autenticar o token
-////
-////        return http.build()
-////    }
+//
+//    @Bean
+//    fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
+//        http
+//            .csrf { it.disable() } // Desabilita proteção CSRF, já que usamos tokens
+//            .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) } // Sem sessões, o estado é mantido no token
+//            .authorizeHttpRequests { auth ->
+//                auth
+//                    .requestMatchers("/**").permitAll() // Permitir acesso público apenas à rota de login
+//                    .anyRequest().authenticated() // Qualquer outra rota precisa de autenticação
+//            }
+//            .addFilterBefore(
+//                BearerTokenFilter(),
+//                UsernamePasswordAuthenticationFilter::class.java
+//            ) // Filtro para autenticar o token
+//
+//        return http.build()
+//    }
 //}

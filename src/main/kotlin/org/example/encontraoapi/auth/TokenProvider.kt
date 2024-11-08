@@ -1,103 +1,48 @@
-//import com.fasterxml.jackson.core.JsonProcessingException
-//import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-//import io.jsonwebtoken.Jwts
-//import io.jsonwebtoken.SignatureAlgorithm
-//import io.jsonwebtoken.security.Keys
-//import org.springframework.stereotype.Component
-//import java.io.IOException
+//import com.auth0.jwt.JWT
+//import com.auth0.jwt.algorithms.Algorithm
+//import com.auth0.jwt.exceptions.JWTCreationException
+//import com.auth0.jwt.exceptions.JWTVerificationException
+//import org.springframework.beans.factory.annotation.Value
+//import org.springframework.stereotype.Service
 //import java.time.Instant
-//import java.util.concurrent.TimeUnit
+//import java.time.LocalDateTime
+//import java.time.ZoneOffset
 //
-//@Component
+//@Service
 //class TokenProvider {
 //
-//    companion object {
-//        /* secret 64 characters required (512bits) */
-//        private const val SECRET = "ackN#fnb#%lNN8gANZNJ^OJI&Za!bhyChJJq2JD1ZV9Z4gZZn@#Kx8CzJJ4Q6lh!"
-//        /* expiration in hours */
-//        private const val EXPIRATION = 12L
-//    }
+//    @Value("\${security.jwt.token.secret-key}")
+//    private lateinit var jwtSecret: String  // O segredo da chave é injetado da configuração
 //
-//    private val key = Keys.hmacShaKeyFor(SECRET.toByteArray())
-//
-//    private val mapper = jacksonObjectMapper()
-//
-//    @Throws(JsonProcessingException::class)
-//    fun encode(jwtObj: Token): String {
-//        val iat = Instant.now().epochSecond
-//        val exp = iat + TimeUnit.HOURS.toSeconds(EXPIRATION)
-//
-//        jwtObj.also {
-//            it.iat = iat
-//            it.exp = exp
-//        }
-//
-//        val payload = mapper.writeValueAsString(jwtObj)
-//
-//        return Jwts.builder()
-//            .setPayload(payload)
-//            .signWith(key, SignatureAlgorithm.HS512)
-//            .compact()
-//    }
-//
-//    @Throws(IOException::class)
-//    fun decode(jwtString: String): Token {
-//
-//        val payload = Jwts.parserBuilder()
-//            .setSigningKey(key)
-//            .build()
-//            .parse(jwtString)
-//            .body
-//
-//        val json = mapper.writeValueAsString(payload)
-//
-//        return mapper.readValue(json, Token::class.java)
-//    }
-//
-//    fun refreshToken(headerAuth: String): String {
-//        val authentication = getAuthentication(headerAuth)
-//
-//        val iat = Instant.now().epochSecond
-//        val exp = iat + TimeUnit.HOURS.toMillis(EXPIRATION)
-//
-//        val newToken = authentication?.getToken()!!
-//
-//        newToken.also {
-//            it.iat = iat
-//            it.exp = exp
-//        }
-//
-//        return encode(newToken)
-//    }
-//
-//    fun isTokenValid(headerAuth: String): Boolean {
-//        val authentication = getAuthentication(headerAuth)
-//
-//        val token = authentication?.getToken()
-//
-//        if (token != null) {
-//            val userId = token.sub
-//
-//            val expirationDate = token.exp ?: 0
-//            val now = Instant.now().epochSecond
-//
-//            if (userId != null && expirationDate >= now) {
-//                return true
-//            }
-//        }
-//        return false
-//    }
-//
-//    fun getAuthentication(headerAuth: String): AuthenticationToken? {
-//        return try {
-//            val token = headerAuth.replace("Bearer ", "")
-//
-//            val principal = decode(token)
-//            AuthenticationToken(principal)
-//
-//        } catch (e: Exception) {
-//            null
+//    // Gera o token de acesso
+//    fun generateAccessToken(user: User): String {
+//        try {
+//            val algorithm = Algorithm.HMAC256(jwtSecret)
+//            return JWT.create()
+//                .withSubject(user.username)
+//                .withClaim("username", user.username)
+//                .withExpiresAt(genAccessExpirationDate())  // Define o tempo de expiração
+//                .sign(algorithm)  // Assina o token com o algoritmo HMAC256 e a chave secreta
+//        } catch (exception: JWTCreationException) {
+//            throw JWTCreationException("Error while generating token", exception)
 //        }
 //    }
 //
+//    // Valida o token recebido
+//    fun validateToken(token: String): String {
+//        try {
+//            val algorithm = Algorithm.HMAC256(jwtSecret)
+//            return JWT.require(algorithm)
+//                .build()
+//                .verify(token)
+//                .subject  // Retorna o "subject" (aqui, o username)
+//        } catch (exception: JWTVerificationException) {
+//            throw JWTVerificationException("Error while validating token", exception)
+//        }
+//    }
+//
+//    // Gera a data de expiração para o token (2 horas de validade)
+//    private fun genAccessExpirationDate(): Instant {
+//        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"))
+//    }
 //}

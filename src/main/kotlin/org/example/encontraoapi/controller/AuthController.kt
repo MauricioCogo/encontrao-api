@@ -12,8 +12,12 @@
 //    private val authApplication: AuthApplication
 //) {
 //    @PostMapping("/login")
-//    fun getUserByDocument(@RequestBody credentialsDTO: CredentialsDTO): ResponseEntity<String> {
-//        val user = authApplication.login(credentialsDTO) ?: return ResponseEntity.notFound().build()
-//        return ResponseEntity.ok(user)
+//    fun login(@RequestBody credentialsDTO: CredentialsDTO): ResponseEntity<String> {
+//        try {
+//            val token = authApplication.login(credentialsDTO)
+//            return ResponseEntity.ok(token)  // Retorna o token gerado
+//        } catch (e: IllegalArgumentException) {
+//            return ResponseEntity.badRequest().body(e.message)  // Erro de login
+//        }
 //    }
 //}
