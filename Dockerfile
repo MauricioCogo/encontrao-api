@@ -20,4 +20,4 @@ RUN ./gradlew build
 EXPOSE 8080
 
 # Comando para rodar a aplicação Spring Boot
-CMD ["java", "-jar", "build/libs/nome-do-seu-jar.jar"]
+CMD ["java", "-jar", "build/libs/encontrao-api-0.0.1-SNAPSHOT.jar"]
