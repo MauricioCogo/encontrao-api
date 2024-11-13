@@ -1,4 +1,6 @@
-FROM openjdk:17
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY . .
+RUN chmod +x gradlew
 EXPOSE 8080
-ADD ./encontrao-api-0.0.1-SNAPSHOT.jar /encontrao-api.jar
-ENTRYPOINT ["java", "-jar", "/encontrao-api.jar"]
+CMD ["./gradlew", "bootRun"]
