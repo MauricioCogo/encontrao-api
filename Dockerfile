@@ -39,4 +39,4 @@ COPY --from=TEMP_BUILD_IMAGE $APP_HOME/build/libs/$ARTIFACT_NAME .
 EXPOSE 8080
 
 # Rodar a aplicação com o Java
-ENTRYPOINT ["java", "-jar", "$ARTIFACT_NAME"]
+ENTRYPOINT ["sh", "-c", "java -jar $ARTIFACT_NAME"]
