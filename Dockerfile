@@ -1,5 +1,5 @@
-# Etapa de Build: Usando Gradle para compilar o projeto
-FROM gradle:5.3.0-jdk-alpine AS TEMP_BUILD_IMAGE
+# Etapa de Build: Usando Gradle para compilar o projeto com Java 17
+FROM gradle:8.11.0-jdk17 AS TEMP_BUILD_IMAGE
 
 # Definir o diretório de trabalho dentro do container
 ENV APP_HOME=/usr/app/
@@ -24,7 +24,7 @@ COPY . .
 RUN gradle clean build
 
 # Etapa Final: Imagem leve para rodar a aplicação
-FROM adoptopenjdk/openjdk11:alpine-jre
+FROM openjdk:17-jdk-slim
 
 # Definir o nome do artefato gerado e o diretório de trabalho
 ENV ARTIFACT_NAME=encontrao-api-0.0.1-SNAPSHOT.jar
