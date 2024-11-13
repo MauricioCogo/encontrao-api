@@ -23,6 +23,8 @@ RUN gradle build || return 0
 COPY . .
 RUN gradle clean build
 
+COPY src/main/resources/images/icons /usr/app/resources/images/icons
+
 # Etapa Final: Imagem leve para rodar a aplicação
 FROM openjdk:17-jdk-slim
 
