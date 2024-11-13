@@ -10,9 +10,6 @@ COPY src ./src
 
 RUN chmod +x ./gradlew
 
-# Rodar a build antes de iniciar o servidor
-RUN ./gradlew build
-
 # Exponha a porta que a aplicação Spring Boot usará
 EXPOSE 8080
 
