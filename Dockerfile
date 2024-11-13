@@ -1,13 +1,23 @@
 FROM openjdk:17-jdk-slim
+
+# Defina o diretório de trabalho no container
 WORKDIR /app
 
-# Copia o arquivo de gradle wrapper e o restante do projeto para o diretório /app no container
-COPY . .
+# Copiar o wrapper do Gradle e arquivos de configuração do projeto
+COPY gradlew .
+COPY gradle ./gradle
+COPY build.gradle.kts .
+COPY settings.gradle.kts .
+COPY src ./src
 
-RUN chmod +x ./gradlew
+# Garantir que o gradlew tenha permissão de execução
+RUN chmod +x gradlew
 
-# Exponha a porta que a aplicação Spring Boot usará
+# Construir o projeto (gerar o .jar) antes de rodar
+RUN ./gradlew build
+
+# Expor a porta que a aplicação Spring Boot usará
 EXPOSE 8080
 
 # Comando para rodar a aplicação Spring Boot
-CMD ["./gradlew", "bootRun"]
+CMD ["java", "-jar", "build/libs/nome-do-seu-jar.jar"]
