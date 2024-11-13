@@ -5,7 +5,7 @@ services:
     build:
       context: ../ 
       dockerfile: infra/Dockerfile
-    container_name: app
+    container_name: encontrao-api
     ports:
       - '9090:8080'
     environment:
@@ -19,7 +19,7 @@ services:
 
   postgres:
     image: postgres:latest
-    container_name: db
+    container_name: encontrao-db
     ports:
       - '5432:5432'
     environment:
