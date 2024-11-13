@@ -1,41 +1,22 @@
 //import org.springframework.context.annotation.Bean
+//import org.springframework.context.annotation.Configuration
 //import org.springframework.security.config.annotation.web.builders.HttpSecurity
 //import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
-//import org.springframework.security.config.http.SessionCreationPolicy
-//import org.springframework.security.web.SecurityFilterChain
-//import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+//import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration
 //
+//
+//@Configuration
 //@EnableWebSecurity
-//class SecurityConfig {
-//
-//
+//class SecurityConfig : WebSecurityConfiguration() {
 //    @Bean
-//    fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
+//    fun bearerTokenFilter(): BearerTokenFilter = BearerTokenFilter()
+//
+//    fun configure(http: HttpSecurity) {
 //        http
-//            .authorizeHttpRequests { requests ->
-//                requests
-//                    .requestMatchers("/auth/login").permitAll() // Permitir acesso ao login
-//                    .anyRequest().authenticated() // Requer autenticação para outros endpoints
-//            }
-//
-//        return http.build()
-//    }
-//
-//    @Bean
-//    fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
-//        http
-//            .csrf { it.disable() } // Desabilita proteção CSRF, já que usamos tokens
-//            .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) } // Sem sessões, o estado é mantido no token
-//            .authorizeHttpRequests { auth ->
-//                auth
-//                    .requestMatchers("/**").permitAll() // Permitir acesso público apenas à rota de login
-//                    .anyRequest().authenticated() // Qualquer outra rota precisa de autenticação
-//            }
-//            .addFilterBefore(
-//                BearerTokenFilter(),
-//                UsernamePasswordAuthenticationFilter::class.java
-//            ) // Filtro para autenticar o token
-//
-//        return http.build()
+//            .authorizeRequests()
+//            .requestMatchers("/public/**").permitAll() // Public endpoints
+//            .anyRequest().authenticated() // Secure all other endpoints
+//            .and()
+//            .addFilterBefore(BearerTokenFilter(), BearerTokenFilter::class.java)
 //    }
 //}

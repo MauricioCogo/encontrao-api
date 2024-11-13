@@ -1,60 +1,31 @@
-//import org.springframework.security.core.context.SecurityContextHolder
-//import org.springframework.security.core.userdetails.UserDetails
-//import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
-//import jakarta.servlet.Filter
 //import jakarta.servlet.FilterChain
-//import jakarta.servlet.FilterConfig
-//import jakarta.servlet.ServletRequest
-//import jakarta.servlet.ServletResponse
 //import jakarta.servlet.http.HttpServletRequest
 //import jakarta.servlet.http.HttpServletResponse
-//import org.springframework.stereotype.Component
+//import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+//import org.springframework.security.core.context.SecurityContextHolder
+//import org.springframework.web.filter.OncePerRequestFilter
 //
-//@Component
-//class BearerTokenFilter : Filter {
-//
-//    override fun doFilter(
-//        request: ServletRequest,
-//        response: ServletResponse,
-//        chain: FilterChain
+//class BearerTokenFilter : OncePerRequestFilter() {
+//    override fun doFilterInternal(
+//        request: HttpServletRequest,
+//        response: HttpServletResponse,
+//        filterChain: FilterChain
 //    ) {
-//        // Converta para HttpServletRequest e HttpServletResponse
-//        val httpRequest = request as HttpServletRequest
-//        val httpResponse = response as HttpServletResponse
-//
-//        // Obtenha o token da requisição
-//        val token = getTokenFromRequest(httpRequest)
-//
-//        if (token != null && validateToken(token)) {
-//            val userDetails: UserDetails = getUserFromToken(token) // Obtenha detalhes do usuário a partir do token
-//            val authentication = UsernamePasswordAuthenticationToken(userDetails, null, userDetails.authorities)
-//            SecurityContextHolder.getContext().authentication = authentication // Defina a autenticação no contexto de segurança
+//        val token = extractToken(request)
+//        if (token != null && TokenProvider.validateToken(token)) {
+//            val username = TokenProvider.extractUsername(token)
+//            val authentication = UsernamePasswordAuthenticationToken(username, null, emptyList())
+//            SecurityContextHolder.getContext().authentication = authentication
 //        }
-//
-//        // Continue a cadeia de filtros
-//        chain.doFilter(httpRequest, httpResponse)
+//        filterChain.doFilter(request, response)
 //    }
 //
-//    private fun getTokenFromRequest(request: HttpServletRequest): String? {
-//        val bearerToken = request.getHeader("Authorization")
-//        return if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
-//            bearerToken.substring(7) // Remova o prefixo "Bearer "
-//        } else null
+//    private fun extractToken(request: HttpServletRequest): String? {
+//        val authHeader = request.getHeader("Authorization")
+//        return if (authHeader != null && authHeader.startsWith("Bearer ")) {
+//            authHeader.substring(7)
+//        } else {
+//            null
+//        }
 //    }
-//
-//    private fun validateToken(token: String): Boolean {
-//        // Lógica para validar o token (JWT, por exemplo)
-//        return true // Simulação de validação
-//    }
-//
-//    private fun getUserFromToken(token: String): UserDetails {
-//        // Extraia e retorne o UserDetails a partir do token
-//        return org.springframework.security.core.userdetails.User.withUsername("user")
-//            .password("")
-//            .authorities(emptyList())
-//            .build()
-//    }
-//
-//    override fun init(filterConfig: FilterConfig) {}
-//    override fun destroy() {}
 //}
