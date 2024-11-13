@@ -3,7 +3,8 @@ version: '3.8'
 services:
   app:
     build:
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: infra/Dockerfile
     container_name: encontrao-api
     ports:
       - '9090:8080'
