@@ -4,9 +4,8 @@ WORKDIR /app
 # Copia os arquivos do projeto para o diretório /app no container
 COPY . .
 
-# Caso esteja usando Maven, construa o projeto
-RUN echo "ls -l" && ls -l
-RUN echo "ls -l" ** ls -l app/
+# Listando os arquivos no diretório /app (após copiar os arquivos)
+RUN echo "Listando os arquivos no diretório /app:" && ls -l
 
 # Exponha a porta que a aplicação Spring Boot usará
 EXPOSE 8080
