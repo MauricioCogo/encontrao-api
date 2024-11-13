@@ -4,6 +4,8 @@ WORKDIR /app
 # Copia os arquivos do projeto para o diretório /app no container
 COPY . .
 
+RUN chmod +x /app/gradlew
+
 # Exponha a porta que a aplicação Spring Boot usará
 EXPOSE 8080
 
