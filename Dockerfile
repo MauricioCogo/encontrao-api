@@ -4,11 +4,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copiar o wrapper do Gradle e arquivos de configuração do projeto
-COPY gradlew .
-COPY gradle ./gradle
-COPY build.gradle.kts .
-COPY settings.gradle.kts .
-COPY src ./src
+COPY ./ .
 
 # Garantir que o gradlew tenha permissão de execução
 RUN chmod +x gradlew
