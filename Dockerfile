@@ -1,10 +1,17 @@
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 
-# Copia os arquivos do projeto para o diretório /app no container
-COPY . .
+# Copia o arquivo de gradle wrapper e o restante do projeto para o diretório /app no container
+COPY gradlew .
+COPY gradle ./gradle
+COPY build.gradle.kts .
+COPY settings.gradle.kts .
+COPY src ./src
 
-RUN chmod +x /app/gradlew
+RUN chmod +x ./gradlew
+
+# Rodar a build antes de iniciar o servidor
+RUN ./gradlew build
 
 # Exponha a porta que a aplicação Spring Boot usará
 EXPOSE 8080
