@@ -44,3 +44,7 @@ kotlin {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.named<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
+    mainClass.set("org.example.encontraoapi.EncontraoApiApplicationKt")
+}
