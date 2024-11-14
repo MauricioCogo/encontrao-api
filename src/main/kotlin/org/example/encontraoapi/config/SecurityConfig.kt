@@ -1,27 +1,47 @@
-package org.example.encontraoapi.config
-
+import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.http.HttpMethod
+import org.springframework.security.authentication.AuthenticationManager
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity
+import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
+import org.springframework.security.config.http.SessionCreationPolicy
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+import org.springframework.security.crypto.password.PasswordEncoder
+import org.springframework.security.web.SecurityFilterChain
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 
 @Configuration
 @EnableWebSecurity
-class SecurityConfig : WebSecurityConfigurerAdapter() {
+@EnableMethodSecurity(securedEnabled = true)
+class SecurityConfig(private val securityFilter: SecurityFilter) {
 
-    @Autowired
-    private lateinit var userDetailsService: UserDetailsService
-    override fun configure(http: HttpSecurity) {
-        http.csrf().disable().authorizeRequests()
-            .antMatchers(HttpMethod.POST, "/signup").permitAll()
-            .anyRequest().authenticated()
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+    @Bean
+    @Throws(Exception::class)
+    fun securityFilterChain(httpSecurity: HttpSecurity): SecurityFilterChain {
+        return httpSecurity
+            .csrf { it.disable() }
+            .sessionManagement { session ->
+                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            }
+            .authorizeHttpRequests { authorize ->
+                authorize
+                    .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
+                    .anyRequest().authenticated()
+            }
+            .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter::class.java)
+            .build()
     }
 
     @Bean
-    fun bCryptPasswordEncoder(): BCryptPasswordEncoder {
+    fun passwordEncoder(): PasswordEncoder {
         return BCryptPasswordEncoder()
     }
 
-    override fun configure(auth: AuthenticationManagerBuilder) {
-        auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder())
+    @Bean
+    @Throws(Exception::class)
+    fun authenticationManager(authenticationConfiguration: AuthenticationConfiguration): AuthenticationManager {
+        return authenticationConfiguration.authenticationManager
     }
 }

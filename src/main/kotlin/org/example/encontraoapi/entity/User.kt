@@ -1,10 +1,14 @@
 package org.example.encontraoapi.entity
 
-import jakarta.persistence.*
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.Table
+import org.springframework.security.core.authority.SimpleGrantedAuthority
 
 @Entity
 @Table(name = "users")
 class User() : BaseEntity() {
+
     @Column(nullable = false)
     var name: String? = null
 
@@ -31,4 +35,23 @@ class User() : BaseEntity() {
 
     @Column(name = "id_campus", nullable = false)
     var campusId: Long? = null
+
+    // Returns a list of authorities based on roles and flags
+    fun getAuthorities(): List<SimpleGrantedAuthority> {
+        val authorities = mutableListOf<SimpleGrantedAuthority>()
+
+        // Add roles from the 'roles' field
+        roles?.split(",")?.forEach {
+            authorities.add(SimpleGrantedAuthority("ROLE_$it"))
+        }
+
+        if (isEvaluator) {
+            authorities.add(SimpleGrantedAuthority("ROLE_EVALUATOR"))
+        }
+        if (isAdmin) {
+            authorities.add(SimpleGrantedAuthority("ROLE_ADMIN"))
+        }
+
+        return authorities
+    }
 }
