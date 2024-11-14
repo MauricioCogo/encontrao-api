@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Campus</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f1f1f1, #ffffff);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+    
+        h1 {
+            text-align: center;
+            color: #b30000;
+            padding-top: 20px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+    
+        .campus-list {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    
+        .campus-list th, .campus-list td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 2px solid #eee;
+            font-size: 1.1rem;
+        }
+    
+        .campus-list th {
+            background-color: #b30000;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    
+        .campus-list tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    
+        .campus-list tr:hover {
+            background-color: #f2d4d4;
+        }
+    
+        .campus-list .participants {
+            font-style: italic;
+            color: #555;
+        }
+    
+        .campus-list .participants:hover {
+            color: #b30000;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+    
+            .campus-list {
+                width: 100%;
+                font-size: 1rem;
+            }
+    
+            .campus-list th, .campus-list td {
+                padding: 10px 15px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+
+    <h1>Lista de Provas e Participantes - IFC Rio do Sul</h1>
+
+    <table class="campus-list">
+        <thead>
+            <tr>
+                <th>Campus</th>
+                <th>Prova</th>
+                <th>Participantes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Arroz Carreteiro</td>
+                <td>Kayla Bianca Venceslau de Abreu, Samuel Groselli Boschi</td>
+            </tr>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Artilharia gaúcha</td>
+                <td>Ana Luiza Matos Rahn, Nilva Maria Possamai, Vinicius Gorges Barbosa, Vitor Dums</td>
+            </tr>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Bocha campeira</td>
+                <td>Gustavo Hames, Milena Loesch de Oliveira, Vitor Stradioto Guimarães</td>
+            </tr>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Cabo de guerra</td>
+                <td>Ana Luiza Matos Rahn, Caroline Erkamann, Felipe Padilha Nesi, Samuel Groselli Boschi, Tobias Bach, Vinicius Gorges Barbosa, Vitor Dums</td>
+            </tr>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Dança de salão</td>
+                <td>Kayla Bianca Venceslau de Abreu, Samuel Groselli Boschi</td>
+            </tr>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Declamação</td>
+                <td>Bárbara Valentina Reinerdt</td>
+            </tr>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Pescaria gaúcha</td>
+                <td>Bárbara Valentina Reinerdt, Daniel Affonso de Oliveira</td>
+            </tr>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Prova dos coordenadores</td>
+                <td>Sheila Carletto</td>
+            </tr>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Revezamento do mate</td>
+                <td>Bárbara Valentina Reinerdt, Nilva Maria Possamai, Vinicius Gorges Barbosa, Vitor Stradioto Guimarães</td>
+            </tr>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Tetarfe</td>
+                <td>Emanuelle Gauer Bevilacqua, Felipe Padilha Nesi</td>
+            </tr>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Tiro de laço vaca parada</td>
+                <td>Bárbara Valentina Reinerdt, Kayla Bianca Venceslau de Abreu, Rubia Basquerote Mendes, Samuel Groselli Boschi, Tobias Bach, Vitor Dums</td>
+            </tr>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Triatlo campeiro</td>
+                <td>Carlos Eduardo Bona, Caroline Erkamann, Emanuelle Gauer Bevilacqua, Nilva Maria Possamai, Samuel Groselli Boschi, Vinicius Gorges Barbosa</td>
+            </tr>
+            <tr>
+                <td>IFC - Rio do Sul</td>
+                <td>Truco</td>
+                <td>Caroline Erkamann, Felipe Padilha Nesi, Maria Luiza de Souza, Milena Loesch de Oliveira, Samuel Groselli Boschi, Vitor Dums</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>Lista de Provas e Participantes - IFRS - Sertão</h1>
+
+    <table class="campus-list">
+        <thead>
+            <tr>
+                <th>Campus</th>
+                <th>Prova</th>
+                <th>Participantes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Arroz Carreteiro</td>
+                <td>Endrio Nunes Pagotto, Sofia Pastorello</td>
+            </tr>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Artilharia gaúcha</td>
+                <td>Arthur Nunes Pagotto, Bruno Iagor Giacomin, Dara Del Osbel Vieira da Silva, Sofia Pastorello</td>
+            </tr>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Bocha campeira</td>
+                <td>Jaime Donato Guarienti Filho, Rafaela Schmittz Irschlinger, Wagner Marangon</td>
+            </tr>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Cabo de guerra</td>
+                <td>Ana Clara Marmentini, Daiane Feles, Eduarda Da Silva Bohrer, Jordano Guarnieri, Marlon Dorigon, Nicolas Luz da Rosa, Vanessa Basso de Oliveira</td>
+            </tr>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Dança de salão</td>
+                <td>Rafaela Schmittz Irschlinger, Wagner Marangon</td>
+            </tr>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Declamação</td>
+                <td>Laís Cimarosti de Oliveira, Nathiane Isabela de Quadros Barea, Sofia Pastorello</td>
+            </tr>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Música conhecida</td>
+                <td>Dagmar Pedro Tamanho, Nathiane Isabela de Quadros Barea, Sofia Pastorello</td>
+            </tr>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Pescaria gaúcha</td>
+                <td>Bruno Iagor Giacomin, Eduarda Da Silva Bohrer</td>
+            </tr>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Revezamento do mate</td>
+                <td>Endrio Nunes Pagotto, Jaime Donato Guarienti Filho, Sofia Pastorello, Vanessa Basso de Oliveira</td>
+            </tr>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Tetarfe</td>
+                <td>Eduarda Da Silva Bohrer, Pietro Daniel Gorardo</td>
+            </tr>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Tiro de laço vaca parada</td>
+                <td>Bruno Iagor Giacomin, Dara Del Osbel Vieira da Silva, Jaime Donato Guarienti Filho, Laís Cimarosti de Oliveira, Marlon Dorigon</td>
+            </tr>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Triatlo campeiro</td>
+                <td>Arthur Nunes Pagotto, Daiane Feles, Dara Del Osbel Vieira da Silva, Endrio Nunes Pagotto, Nathiane Isabela de Quadros Barea, Nicolas Luz da Rosa</td>
+            </tr>
+            <tr>
+                <td>IFRS - Sertão</td>
+                <td>Truco</td>
+                <td>Ana Clara Marmentini, Jordano Guarnieri, Nathiane Isabela de Quadros Barea, Nicolas Luz da Rosa, Pietro Daniel Gorardo, Rafaela Schmittz Irschlinger</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h1>Lista de Provas e Participantes IFRS - Farroupilha</h1>
+
+    <table class="campus-list">
+        <thead>
+          <tr>
+            <th>Campus</th>
+            <th>Prova</th>
+            <th>Participantes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IFRS - Farroupilha</td>
+            <td>Arroz Carreteiro</td>
+            <td>Fernanda Graizyk, Guilherme Löf Castanha</td>
+          </tr>
+          <tr>
+            <td>IFRS - Farroupilha</td>
+            <td>Artilharia gaúcha</td>
+            <td>Bianca Bonalume Mendes, Dhayna Gabriela Lopes Xavier, Guilherme Löf Castanha, Kauã Sudarte</td>
+          </tr>
+          <tr>
+            <td>IFRS - Farroupilha</td>
+            <td>Bocha campeira</td>
+            <td>Beatriz Wavrita Gomes, Gabriel Carvalho Soldateli, Kauan Hermann Michel</td>
+          </tr>
+          <tr>
+            <td>IFRS - Farroupilha</td>
+            <td>Cabo de guerra</td>
+            <td>Alan Bastos Nadalon, Cesar Pasuch Dias, Eduardo dos Santos Nascimento Ávila, Guilherme Löf Castanha, Luara Silvestrin de oliveira, Lucas Werlang, Tamily Haskel</td>
+          </tr>
+          <tr>
+            <td>IFRS - Farroupilha</td>
+            <td>Dança de salão</td>
+            <td>Gabriel Carvalho Soldateli, Tamily Haskel</td>
+          </tr>
+          <tr>
+            <td>IFRS - Farroupilha</td>
+            <td>Pescaria gaúcha</td>
+            <td>Gabriel Carvalho Soldateli, Yasmim Sacol Bitencourt</td>
+          </tr>
+          <tr>
+            <td>IFRS - Farroupilha</td>
+            <td>Prova dos coordenadores</td>
+            <td>Jorge da Luz Matos</td>
+          </tr>
+          <tr>
+            <td>IFRS - Farroupilha</td>
+            <td>Revezamento do mate</td>
+            <td>Cesar Pasuch Dias, Fernanda Graizyk, Lorenzo Alvez Del Vecchio, Yasmim Sacol Bitencourt</td>
+          </tr>
+          <tr>
+            <td>IFRS - Farroupilha</td>
+            <td>Tetarfe</td>
+            <td>Clara Ribeiro Dão Quimaia, Lucas Werlang</td>
+          </tr>
+          <tr>
+            <td>IFRS - Farroupilha</td>
+            <td>Tiro de laço vaca parada</td>
+            <td>Alan Bastos Nadalon, Bianca Bonalume Mendes, Clara Ribeiro Dão Quimaia, Eduardo dos Santos Nascimento Ávila, Fernanda Graizyk, Lorenzo Alvez Del Vecchio</td>
+          </tr>
+          <tr>
+            <td>IFRS - Farroupilha</td>
+            <td>Triatlo campeiro</td>
+            <td>Cesar Pasuch Dias, Fernanda Graizyk, Lorenzo Alvez Del Vecchio, Luara Silvestrin de oliveira, Miguel Conculatto, Yasmim Sacol Bitencourt</td>
+          </tr>
+          <tr>
+            <td>IFRS - Farroupilha</td>
+            <td>Truco</td>
+            <td>Beatriz Wavrita Gomes, Cesar Pasuch Dias, Dhayna Gabriela Lopes Xavier, Jade Vitória Moraes de Andrade, Kauan Hermann Michel, Miguel Conculatto</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1>Lista de Provas e Participantes - IFRS - Bento Gonçalves</h1>
+
+
+      <table class="campus-list">
+        <thead>
+            <tr>
+                <th>Campus</th>
+                <th>Prova</th>
+                <th>Participantes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Arroz Carreteiro</td>
+                <td>Ismael Gomes da Silveira, Natalia Menin</td>
+            </tr>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Artilharia gaúcha</td>
+                <td>Frantchesca Sperotto Glanert, Ismael Gomes da Silveira, Kamile Boeira da Silva, Lucas André Pouluk Strozak</td>
+            </tr>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Bocha campeira</td>
+                <td>Andressa da Rosa, Felipe Tomasi, Lucas Waldemiro Luchese</td>
+            </tr>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Cabo de guerra</td>
+                <td>Eduardo Fernando Stroeher, Elisa Ficagna, Elisete Cardoso Dos Santos, Felipe Tomasi, Ismael Gomes da Silveira, Rodrigo Dallé Berselli, Vitor Piletti Franzolozo</td>
+            </tr>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Dança de salão</td>
+                <td>Eduardo Ferreira Ludwig, Laura Caroline Pouluk Strozak</td>
+            </tr>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Declamação</td>
+                <td>Laura Caroline Pouluk Strozak</td>
+            </tr>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Pescaria gaúcha</td>
+                <td>Felipe Tomasi, Natalia Menin</td>
+            </tr>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Prova dos coordenadores</td>
+                <td>Elisete Cardoso Dos Santos, Jair Matias da Rosa</td>
+            </tr>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Revezamento do mate</td>
+                <td>Evilin Andreia Vigo, Ismael Gomes da Silveira, Luiza Marcolin Dall’Oglio, Ramiro Rodrigues Ferreira</td>
+            </tr>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Tetarfe</td>
+                <td>Rosa Comin Paggi, Vitor Piletti Franzolozo</td>
+            </tr>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Tiro de laço vaca parada</td>
+                <td>Ana Júlia Cardoso Dos Santos, Laura Caroline Pouluk Strozak, Nicolle Pedruzzi da Silva, Ramiro Rodrigues Ferreira, Vitor Ismael Baldissarelli Miotto</td>
+            </tr>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Triatlo campeiro</td>
+                <td>Eduardo Ferreira Ludwig, Júlia Orso, Laura Caroline Pouluk Strozak, Rodrigo Dallé Berselli, Teresa Enderle, Vitor Ismael Baldissarelli Miotto</td>
+            </tr>
+            <tr>
+                <td>IFRS - Bento Gonçalves</td>
+                <td>Truco</td>
+                <td>Eduardo Fernando Stroeher, Lucas André Pouluk Strozak, Vitor Ismael Baldissarelli Miotto</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <h1>Lista de Provas e Participantes IFFar - SVS</h1>
+
+
+    <table class="campus-list">
+        <thead>
+          <tr>
+            <th>Campus</th>
+            <th>Prova</th>
+            <th>Participantes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Arroz Carreteiro</td>
+            <td>Endrius Vidal dos Santos Brum, Isaboo Acosta Alcântara</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Artilharia gaúcha</td>
+            <td>Amanda Nunes de Mattos, Endrius Vidal dos Santos Brum, Gabriel Cargnin Nicoli, Luandra Benites Sturza</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Bocha campeira</td>
+            <td>João Vitor Homrich da Silva, Maria Eduarda Ilarreguy da Silva, Pedro Rodrigo Oliveira Fonceca</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Cabo de guerra</td>
+            <td>Amanda Fiber Badinelli, Bruna Sturza Brum, Gabriela Pfeifer de Carvalho, João Pedro Souza Cogo, João Vitor de Vieira de Amorin, Kaue do Pilar Olegario, Pedro Bertoldo Pinto, Welingtom Erdmann Corrêa</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Dança de salão</td>
+            <td>Évellyn Leal Fernandes, Gabriel Cargnin Nicoli</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Declamação</td>
+            <td>Alana Benites Sturza, Pedro Bertoldo Pinto</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Música conhecida</td>
+            <td>Endrius Vidal dos Santos Brum, João Vitor Homrich da Silva, Talita Suellen de Oliveira</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Música inédita</td>
+            <td>Endrius Vidal dos Santos Brum, Gabriel Cargnin Nicoli, Gabriel Cargnin Nicoli, João Vitor Homrich da Silva, João Vitor Homrich da Silva, Pedro Bertoldo Pinto, Talita Suellen de Oliveira, Wesllen Naysinger dos Santos</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Pescaria gaúcha</td>
+            <td>Amanda Nunes de Mattos, Kaue do Pilar Olegario</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Prova dos coordenadores</td>
+            <td>Cynthia Gindri Haigert, Patrick Marquezini da Silva</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Revezamento do mate</td>
+            <td>Alana Benites Sturza, Endrius Vidal dos Santos Brum, Raelle Souza Mendes, Renan Douglas De Souza</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Tetarfe</td>
+            <td>Nicolas Vidal dos Santos Brum, Simone Pereira Gibicoski</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Tiro de laço vaca parada</td>
+            <td>Évellyn Leal Fernandes, João Pedro de Mora Faete, Maria Eduarda Ilarreguy da Silva, Mayalu Sbicigo Faria, Pedro Rodrigo Oliveira Fonceca, Pedro Rodrigo Oliveira Fonceca</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Triatlo campeiro</td>
+            <td>Gabriela Pfeifer de Carvalho, João Pedro Souza Cogo, João Vitor Homrich da Silva, Leticia da Costa Teixeira, Maurício Carvalho Cogo, Rafaela Oliveira da Rosa Godoi</td>
+          </tr>
+          <tr>
+            <td>IFFar - SVS</td>
+            <td>Truco</td>
+            <td>Amanda Nunes de Mattos, Gabriel Cargnin Nicoli, João Pedro Souza Cogo, João Vitor Homrich da Silva, Rafaela Oliveira da Rosa Godoi, Simone Pereira Gibicoski</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h1>Lista de Provas e Participantes - IFFar Santo Augusto</h1>
+
+      <table class="campus-list">
+          <thead>
+              <tr>
+                  <th>Campus</th>
+                  <th>Prova</th>
+                  <th>Participantes</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>IFFar - Santo Augusto</td>
+                  <td>Arroz Carreteiro</td>
+                  <td>Higor Bueno da Silva, Rafaeli Aparecida Vargas de Moura</td>
+              </tr>
+              <tr>
+                  <td>IFFar - Santo Augusto</td>
+                  <td>Cabo de guerra</td>
+                  <td>Bruno Eduardo dos Santos Rangel Ramos, Leonardo Padilha da Silva, Matheus Lorenson, Nicolas Felipe Vargas, Nicolas Felipe Vargas, Rafaela Giacobo Bottega, Stella Maria de Bona Schwarzbold</td>
+              </tr>
+              <tr>
+                  <td>IFFar - Santo Augusto</td>
+                  <td>Dança de salão</td>
+                  <td>Allana Knorst Wicrzbicki, Nicolas Felipe Vargas</td>
+              </tr>
+              <tr>
+                  <td>IFFar - Santo Augusto</td>
+                  <td>Declamação</td>
+                  <td>Amanda Solivo, Leonardo Padilha da Silva</td>
+              </tr>
+              <tr>
+                  <td>IFFar - Santo Augusto</td>
+                  <td>Prova dos coordenadores</td>
+                  <td>Daniele Uhlmann Anacleto, Lázaro Santos Souza</td>
+              </tr>
+              <tr>
+                  <td>IFFar - Santo Augusto</td>
+                  <td>Revezamento do mate</td>
+                  <td>Matheus Lorenson, Nicolas Felipe Vargas, Rafaela Giacobo Bottega, Stella Maria de Bona Schwarzbold</td>
+              </tr>
+              <tr>
+                  <td>IFFar - Santo Augusto</td>
+                  <td>Tiro de laço vaca parada</td>
+                  <td>Matheus Lorenson, Nicolas Felipe Vargas</td>
+              </tr>
+              <tr>
+                  <td>IFFar - Santo Augusto</td>
+                  <td>Truco</td>
+                  <td>Kauan Della Flora Maciel, Paula Aparecida Felimberti Gonzatto, Rafaela Giacobo Bottega, Rhyã Samuel dos Reis Vargas, Stella Maria de Bona Schwarzbold, Victor Rodrigues Cardinal</td>
+              </tr>
+          </tbody>
+      </table>
+      
+      <h1>Lista de Provas e Participantes IFFar - Santa Rosa</h1>
+
+      <table class="campus-list">
+        <thead>
+          <tr>
+            <th>Campus</th>
+            <th>Prova</th>
+            <th>Participantes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Arroz Carreteiro</td>
+            <td>Kamile Schimitz Sapieczinski, Mateus Heck da Rosa</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Artilharia gaúcha</td>
+            <td>Cassiano Gerhardt Rambo, Gabriely Knack, Gustavo Gabriel Petry Eberhardt, Kamile Schimitz Sapieczinski</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Bocha campeira</td>
+            <td>Mateus Heck da Rosa, Matheus Reichert Engelmann, Nicole Gräf</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Cabo de guerra</td>
+            <td>Amanda de Almeida Massaia, Bianca Morais Fabriz, Bruno Mombach Weber, Cassiano Gerhardt Rambo, Guilherme Eduardo Soares da Silva, Mateus Puhl Schneider, Victor Renan</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Dança de salão</td>
+            <td>Ana Laura Engel da Silva, Guilherme Eduardo Soares da Silva</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Declamação</td>
+            <td>Ana Flávia Londero De Costa, Guilherme Eduardo Soares da Silva</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Música conhecida</td>
+            <td>Ana Laura Engel da Silva, Bruno Mombach Weber, Bruno Mombach Weber, Guilherme Eduardo Soares da Silva, Guilherme Eduardo Soares da Silva, Matheus da Silva Stein</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Música inédita</td>
+            <td>Guilherme Eduardo Soares da Silva, Mateus Heck da Rosa, Matheus da Silva Stein</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Pescaria gaúcha</td>
+            <td>Samara Prates dos Santos, Victor Renan</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Prova dos coordenadores</td>
+            <td>Graciele Hilda Welter, Roberto Preussler</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Revezamento do mate</td>
+            <td>Ana Flávia Londero De Costa, Bruno Mombach Weber, Cristine Zottis Schelp, Mateus Heck da Rosa</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Tetarfe</td>
+            <td>Djenifer Gerhardt Rambo, Victor Renan</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Tiro de laço vaca parada</td>
+            <td>Amanda Vitória Diniz, Cristine Zottis Schelp, Isabeli Pazini, Mateus Puhl Schneider, Matheus da Silva Stein, Matheus Reichert Engelmann</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Triatlo campeiro</td>
+            <td>Amanda de Almeida Massaia, Ana Laura Engel da Silva, Bruno Mombach Weber, Guilherme Eduardo Soares da Silva, Isabel Zimmer Weber, Mateus Heck da Rosa</td>
+          </tr>
+          <tr>
+            <td>IFFar - Santa Rosa</td>
+            <td>Truco</td>
+            <td>Amanda Marchiori, Bruno Mombach Weber, Cassiano Gerhardt Rambo, Gabriely Knack, Gustavo Gabriel Petry Eberhardt, Isabel Zimmer Weber</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h1>Lista de Provas e Participantes IFFar - Alegrete</h1>
+
+      <table class="campus-list">
+        <thead>
+          <tr>
+            <th>Campus</th>
+            <th>Prova</th>
+            <th>Participantes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Arroz Carreteiro</td>
+            <td>Elielson Rodrigues Guedes, Letícia Silva Romero</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Artilharia gaúcha</td>
+            <td>Izabel Michel Melo, Juliane Dorneles, Luiz Fabiano Martins Scola, Wesley Ferreira de Aquino</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Bocha campeira</td>
+            <td>João Eduardo Sagrillo, Mariana Carla Braun Bile, Tiago Margutti Prates</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Cabo de guerra</td>
+            <td>Arthur Aranguis Beker, Milena Sanches Chagas, Suélen Bianca da Silva, Vitor Luis Severo da Costa</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Dança de salão</td>
+            <td>Mikael Prestes, Taini dos Santos Krug</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Declamação</td>
+            <td>Ana Rita Costenaro Parizzi, Andrio Franco Alves Silva, Diogo Canabarro Soclari</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Música conhecida</td>
+            <td>Taini dos Santos Krug</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Pescaria gaúcha</td>
+            <td>Ana Mariane Rodrigues de Oliveira, Sérgio Lima de Souza Júnior</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Prova dos coordenadores</td>
+            <td>Suelen Valau, Viviane Bilhalba Cruz</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Revezamento do mate</td>
+            <td>Elielson Rodrigues Guedes, Jady Mota Queiroz, Jady Mota Queiroz, Letícia Silva Romero</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Tetarfe</td>
+            <td>Andriélly Dias Karzewski, Vitório Correa Bianchin</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Tiro de laço vaca parada</td>
+            <td>Elielson Rodrigues Guedes, Pablo Fernando Rodrigues, Pietro de Souza, Vitória Flores dos Santos, Vitória Flores dos Santos, Viviane Bilhalba Cruz</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Triatlo campeiro</td>
+            <td>Juliane Dorneles, Natani Gonçalves Padilha, Samuel da Silva Romero, Tailane Santos, Vitor Samuel de Moura da Silva, Wendel Fabrício Tavares</td>
+          </tr>
+          <tr>
+            <td>IFFar - Alegrete</td>
+            <td>Truco</td>
+            <td>Ana Mariane Rodrigues de Oliveira, Denis Moacir de Paula Júnior, Elielson Rodrigues Guedes, Jady Mota Queiroz, Ketlen Oliveira de Vargas, Pablo Fernando Rodrigues</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h1>Lista de Provas e Participantes IFC - Videira</h1>
+
+      <table class="campus-list">
+        <thead>
+          <tr>
+            <th>Campus</th>
+            <th>Prova</th>
+            <th>Participantes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Arroz Carreteiro</td>
+            <td>Amanda Moresco, Roger Cantelli</td>
+          </tr>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Artilharia gaúcha</td>
+            <td>João Henrique Breyer, Letícia Brancher Louzada, Matheus Ferronato, Tainá Guarnieri</td>
+          </tr>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Bocha campeira</td>
+            <td>Gabriel Borin Thibes de Campos, Maria Eduarda Alves Xavier, Samuel Borga Farina</td>
+          </tr>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Cabo de guerra</td>
+            <td>Emily Cristina Sarmento, Gabriel Borin Thibes de Campos, Gustavo Zago, Luana Brancaleoni, Matheus Ferronato, Nykolas Heckel, Stephan Heckel</td>
+          </tr>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Dança de salão</td>
+            <td>Gustavo Zago, Maria Isadora Braghini Sabadin</td>
+          </tr>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Declamação</td>
+            <td>Letícia Brancher Louzada</td>
+          </tr>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Pescaria gaúcha</td>
+            <td>Amanda Moresco, Stephan Heckel</td>
+          </tr>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Prova dos coordenadores</td>
+            <td>André Leonardo Rubini, Silvia Marina Rigo</td>
+          </tr>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Revezamento do mate</td>
+            <td>Ana Clara Deon Treis, Gabriel Borin Thibes de Campos, Isabela Oliveira, Matheus Ferronato</td>
+          </tr>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Tetarfe</td>
+            <td>Gabriel Borin Thibes de Campos, Gabrielli Panceri Araldi</td>
+          </tr>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Tiro de laço vaca parada</td>
+            <td>Gabriel Borin Thibes de Campos, Gustavo Zago, Joana Tragancin Thomé, Maria Isadora Braghini Sabadin, Maria Isadora Braghini Sabadin, Matheus Ferronato</td>
+          </tr>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Triatlo campeiro</td>
+            <td>Ana Júlia Ferreira Vieira, Gabriela Cristina Prigol, Gabriela jakobczinsky, Guilherme dos Santos Getassi, João Henrique Breyer, Nykolas Heckel</td>
+          </tr>
+          <tr>
+            <td>IFC - Videira</td>
+            <td>Truco</td>
+            <td>Ana Clara Deon Treis, Gabriel Borin Thibes de Campos, Gustavo Zago, Izabel Bertha, Matheus Ferronato, Rafaela Scolaro</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1>Lista de Provas e Participantes IFC - Santa Rosa do Sul</h1>
+      
+      <table class="campus-list">
+        <thead>
+          <tr>
+            <th>Campus</th>
+            <th>Prova</th>
+            <th>Participantes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Arroz Carreteiro</td>
+            <td>Ivan da Cruz Melo, Maria Eduarda Scheffer Machado</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Artilharia gaúcha</td>
+            <td>Gabriel Dos Santos da Silva, Giane Righez de Assunção, Jean Carlos Barbosa, Rafaela Reis</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Bocha campeira</td>
+            <td>Jean Carlos Barbosa, João Manoel C. Bitencourt, Talia Gabrieli R. Ré</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Cabo de guerra</td>
+            <td>Erick Heidemann Schlickmann, Gabriel Dos Santos da Silva, Ivan da Cruz Melo, João Manoel C. Bitencourt, Letícia Correa Rabello, Olívia Ré Warmling, Victor Ângelo Aita dos Santos</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Dança de salão</td>
+            <td>Ivan da Cruz Melo, Pâmela Santos do Canto</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Declamação</td>
+            <td>Davi Cézar da Silva, Julia Damiani Velho, Pâmela Santos do Canto</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Música inédita</td>
+            <td>Antonio Cézar Perrando da Silva, Davi Cézar da Silva, Letícia Américo de Freitas</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Pescaria gaúcha</td>
+            <td>Gabriel Diogo dos Santos, Rayssa Fernandes Pinow</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Prova dos coordenadores</td>
+            <td>Davi Cézar da Silva, Geraldo José Rodrigues</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Revezamento do mate</td>
+            <td>Gabriel Diogo dos Santos, João Manoel C. Bitencourt, Lívia Alves de Macedo, Rafaela Reis</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Tetarfe</td>
+            <td>Camili Roxo Machado, Victor Ângelo Aita dos Santos</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Tiro de laço vaca parada</td>
+            <td>Camili Roxo Machado, Gabriel Diogo dos Santos, Giane Righez de Assunção, João Manoel C. Bitencourt, Lívia Selau Bellettini, Victor Ângelo Aita dos Santos</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Triatlo campeiro</td>
+            <td>Erick Heidemann Schlickmann, Gabriel Dos Santos da Silva, Jean Carlos Barbosa, Pietra Smania Spader, Rafaela Reis, Talia Gabrieli R. Ré</td>
+          </tr>
+          <tr>
+            <td>IFC - Santa Rosa do Sul</td>
+            <td>Truco</td>
+            <td>Gabriel Dos Santos da Silva, Jean Carlos Barbosa, João Manoel C. Bitencourt, Letícia Correa Rabello, Lívia Alves de Macedo, Talia Gabrieli R. Ré</td>
+          </tr>
+        </tbody>
+      </table>
+
+</body>
+</html>

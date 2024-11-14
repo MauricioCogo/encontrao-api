@@ -1,33 +1,33 @@
-name,required,date,type,id_point,id_competition,deleted,created,created_by,updated,updated_by
-Dança de salão,FALSE,2024-11-15 13:30:00,Prova,1,1,FALSE,NOW(),29,NOW(),29
-Revezamento do mate,FALSE,2024-11-15 13:30:00,Prova,2,1,FALSE,NOW(),29,NOW(),29
-Tetarfe,FALSE,2024-11-15 13:30:00,Prova,4,4,FALSE,NOW(),29,NOW(),29
-Triatlo campeiro,FALSE,2024-11-15 14:30:00,Prova,3,3,FALSE,NOW(),29,NOW(),29
-Tiro de laço vaca parada,FALSE,2024-11-16 08:00:00,Prova,5,5,FALSE,NOW(),29,NOW(),29
-Pescaria gaúcha,FALSE,2024-11-16 08:00:00,Prova,6,6,FALSE,NOW(),29,NOW(),29
-Truco,FALSE,2024-11-16 08:00:00,Prova,7,7,FALSE,NOW(),29,NOW(),29
-Arroz carreteiro,FALSE,2024-11-16 09:00:00,Prova,8,8,FALSE,NOW(),29,NOW(),29
-Artilharia gaúcha,FALSE,2024-11-16 13:30:00,Prova,9,9,FALSE,NOW(),29,NOW(),29
-Cabo de guerra,FALSE,2024-11-16 14:30:00,Prova,10,10,FALSE,NOW(),29,NOW(),29
-Bocha campeira,FALSE,2024-11-16 13:30:00,Prova,11,11,FALSE,NOW(),29,NOW(),29
-Prova dos coordenadores,FALSE,2024-11-16 16:00:00,Prova,17,11,FALSE,NOW(),29,NOW(),29
-Abertura oficial do 30º Encontrão,TRUE,2024-11-15 09:00:00,Obrig,16,,FALSE,NOW(),29,NOW(),29
-Almoço,TRUE,2024-11-15 11:00:00,Obrig,13,,FALSE,NOW(),29,NOW(),29
-Banho,TRUE,2024-11-16 18:30:00,Obrig,14,,FALSE,NOW(),29,NOW(),29
-Jantar,TRUE,2024-11-15 17:30:00,Obrig,13,,FALSE,NOW(),29,NOW(),29
-FECULT,TRUE,2024-11-15 19:00:00,Obrig,15,,FALSE,NOW(),29,NOW(),29
-Apresentação das invernadas,TRUE,2024-11-15 20:30:00,Obrig,15,,FALSE,NOW(),29,NOW(),29
-Danças de integração,TRUE,2024-11-15 22:00:00,Obrig,15,,FALSE,NOW(),29,NOW(),29
-Baile de integração,TRUE,2024-11-15 22:30:00,Obrig,15,,FALSE,NOW(),29,NOW(),29
-Retorno ao campus,TRUE,2024-11-16 01:00:00,Obrig,17,,FALSE,NOW(),29,NOW(),29
-Hora de recolher,TRUE,2024-11-16 01:30:00,Obrig,18,,FALSE,NOW(),29,NOW(),29
-Hora do silêncio,TRUE,2024-11-16 02:00:00,Obrig,18,,FALSE,NOW(),29,NOW(),29
-Alvorada festiva,TRUE,2024-11-16 06:00:00,Obrig,18,,FALSE,NOW(),29,NOW(),29
-Café da manhã,TRUE,2024-11-16 06:30:00,Obrig,13,,FALSE,NOW(),29,NOW(),29
-Almoço (NTG),TRUE,2024-11-16 11:00:00,Obrig,12,,FALSE,NOW(),29,NOW(),29
-Banho,TRUE,2024-11-16 18:30:00,Obrig,14,,FALSE,NOW(),29,NOW(),29
-Jantar,TRUE,2024-11-16 17:30:00,Obrig,13,,FALSE,NOW(),29,NOW(),29
-Danças birivas,TRUE,2024-11-16 19:00:00,Obrig,15,,FALSE,NOW(),29,NOW(),29
-Apresentação das invernadas,TRUE,2024-11-16 19:30:00,Obrig,15,,FALSE,NOW(),29,NOW(),29
-Baile de encerramento,TRUE,2024-11-16 22:30:00,Obrig,15,,FALSE,NOW(),29,NOW(),29
-Retorno,TRUE,2024-11-17 01:30:00,Obrig,17,,FALSE,NOW(),29,NOW(),29
+name,required,date,type,end_date,id_point,id_competition,deleted,created,created_by,updated,updated_by
+Dança de salão,FALSE,2024-11-15 13:30:00,Prova,,1,1,FALSE,NOW(),29,NOW(),29
+Revezamento do mate,FALSE,2024-11-15 13:30:00,Prova,,2,1,FALSE,NOW(),29,NOW(),29
+Tetarfe,FALSE,2024-11-15 13:30:00,Prova,,4,4,FALSE,NOW(),29,NOW(),29
+Triatlo campeiro,FALSE,2024-11-15 14:30:00,Prova,,3,3,FALSE,NOW(),29,NOW(),29
+Tiro de laço vaca parada,FALSE,2024-11-16 08:00:00,Prova,,5,5,FALSE,NOW(),29,NOW(),29
+Pescaria gaúcha,FALSE,2024-11-16 08:00:00,Prova,,6,6,FALSE,NOW(),29,NOW(),29
+Truco,FALSE,2024-11-16 08:00:00,Prova,,7,7,FALSE,NOW(),29,NOW(),29
+Arroz carreteiro,FALSE,2024-11-16 09:00:00,Prova,,8,8,FALSE,NOW(),29,NOW(),29
+Artilharia gaúcha,FALSE,2024-11-16 13:30:00,Prova,,9,9,FALSE,NOW(),29,NOW(),29
+Cabo de guerra,FALSE,2024-11-16 14:30:00,Prova,,10,10,FALSE,NOW(),29,NOW(),29
+Bocha campeira,FALSE,2024-11-16 13:30:00,Prova,,11,11,FALSE,NOW(),29,NOW(),29
+Prova dos coordenadores,FALSE,2024-11-16 16:00:00,Prova,,17,11,FALSE,NOW(),29,NOW(),29
+Abertura oficial do 30º Encontrão,TRUE,2024-11-15 09:00:00,Obrig,,16,,FALSE,NOW(),29,NOW(),29
+Almoço,TRUE,2024-11-15 11:00:00,Obrig,2024-11-15 12:55:00,13,,FALSE,NOW(),29,NOW(),29
+Banho,TRUE,2024-11-15 18:30:00,Obrig,2024-11-15 18:30:00,14,,FALSE,NOW(),29,NOW(),29
+Jantar,TRUE,2024-11-15 17:30:00,Obrig,2024-11-15 19:00:00,13,,FALSE,NOW(),29,NOW(),29
+FECULT,TRUE,2024-11-15 19:00:00,Obrig,,15,,FALSE,NOW(),29,NOW(),29
+Apresentação das invernadas,TRUE,2024-11-15 20:30:00,Obrig,,15,,FALSE,NOW(),29,NOW(),29
+Danças de integração,TRUE,2024-11-15 22:00:00,Obrig,,15,,FALSE,NOW(),29,NOW(),29
+Baile de integração,TRUE,2024-11-15 22:30:00,Obrig,,15,,FALSE,NOW(),29,NOW(),29
+Retorno ao campus,TRUE,2024-11-16 01:00:00,Obrig,,17,,FALSE,NOW(),29,NOW(),29
+Hora de recolher,TRUE,2024-11-16 01:30:00,Obrig,,18,,FALSE,NOW(),29,NOW(),29
+Hora do silêncio,TRUE,2024-11-16 02:00:00,Obrig,,18,,FALSE,NOW(),29,NOW(),29
+Alvorada festiva,TRUE,2024-11-16 06:00:00,Obrig,,18,,FALSE,NOW(),29,NOW(),29
+Café da manhã,TRUE,2024-11-16 06:30:00,Obrig,2024-11-16 07:30:00,13,,FALSE,NOW(),29,NOW(),29
+Almoço (NTG),TRUE,2024-11-16 11:00:00,Obrig,2024-11-15 12:55:00,12,,FALSE,NOW(),29,NOW(),29
+Banho,TRUE,2024-11-16 18:30:00,Obrig,2024-11-16 18:30:00,14,,FALSE,NOW(),29,NOW(),29
+Jantar,TRUE,2024-11-16 17:30:00,Obrig,2024-11-15 19:00:00,13,,FALSE,NOW(),29,NOW(),29
+Danças birivas,TRUE,2024-11-16 19:00:00,Obrig,,15,,FALSE,NOW(),29,NOW(),29
+Apresentação das invernadas,TRUE,2024-11-16 19:30:00,Obrig,,15,,FALSE,NOW(),29,NOW(),29
+Baile de encerramento,TRUE,2024-11-16 22:30:00,Obrig,,15,,FALSE,NOW(),29,NOW(),29
+Retorno,TRUE,2024-11-17 01:30:00,Obrig,,17,,FALSE,NOW(),29,NOW(),29
