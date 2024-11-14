@@ -21,6 +21,7 @@ class SecurityConfig(private val securityFilter: SecurityFilter) {
     @Throws(Exception::class)
     fun securityFilterChain(httpSecurity: HttpSecurity): SecurityFilterChain {
         return httpSecurity
+            .httpBasic().disable()
             .csrf { it.disable() }
             .sessionManagement { session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
