@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBcvJ28TdKx6wOk3feqWRtKRc17S5c9xk&callback=initMap" async defer></script>
+</head>
+<body>
+    <!-- Top Background fixo -->
+    <div class="top-background"></div>
+
+    <!-- Conteúdo Principal -->
+    <header>
+        <img src="assets/header.png" alt="Header" class="header-image">
+    </header>
+
+    <section id="mapa" class="content">
+        <div id="map" style="height: 600px; width: 100%;"></div>
+    </section>
+
+    <footer class="navigation">
+        <button onclick="navigateTo('cronograma.html')">Cronograma</button>
+        <button onclick="navigateTo('apresentacoes.html')">Apresentações</button>
+        
+    </footer>
+
+    <!-- Bottom Background fixo -->
+    <div class="bottom-background"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function initMap() {
+            const bounds = new google.maps.LatLngBounds(
+                { lat: -29.71073915673884, lng: -54.70949416860672 },
+                { lat: -29.693415052019816, lng: -54.67912075758503 }
+            );
+
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: bounds.getCenter(),
+                zoom: 12,
+                mapTypeId: "satellite",
+                disableDefaultUI: true,
+                restriction: {
+                    latLngBounds: bounds,
+                    strictBounds: true
+                },
+            });
+            const pontos = [
+                {
+                    name: "Dança de salão",
+                    latitude: -29.704415687121692,
+                    longitude: -54.69817036876705,
+                    icon: "trofeuC.png",
+                    description: "NTG"
+                },
+                {
+                    name: "Revezamento do mate",
+                    latitude: -29.704374820999202,
+                    longitude: -54.69770526684055,
+                    icon: "trofeuC.png",
+                    description: "Garagem"
+                },
+                {
+                    name: "Triatlo campeiro",
+                    latitude: -29.704334518267306,
+                    longitude: -54.69768606687848,
+                    icon: "trofeuC.png",
+                    description: "Garagem"
+                },
+                {
+                    name: "Tetarfe",
+                    latitude: -29.704296995027534,
+                    longitude: -54.69766366693321,
+                    icon: "trofeuC.png",
+                    description: "Garagem"
+                },
+                {
+                    name: "Tiro de laço vaca parada",
+                    latitude: -29.70425394454995,
+                    longitude: -54.69764128484854,
+                    icon: "trofeuC.png",
+                    description: "Garagem"
+                },
+                {
+                    name: "Pescaria gaúcha",
+                    latitude: -29.70604223241599,
+                    longitude: -54.69716708050202,
+                    icon: "trofeuC.png",
+                    description: "Açude"
+                },
+                {
+                    name: "Truco",
+                    latitude: -29.704346952030676,
+                    longitude: -54.69807047483297,
+                    icon: "trofeuC.png",
+                    description: "NTG"
+                },
+                {
+                    name: "Arroz Carreteiro",
+                    latitude: -29.704470995951734,
+                    longitude: -54.69804298867797,
+                    icon: "trofeuC.png",
+                    description: "NTG"
+                },
+                {
+                    name: "Artilharia gaúcha",
+                    latitude: -29.702773175390206,
+                    longitude: -54.695393463220356,
+                    icon: "trofeuC.png",
+                    description: "Campo"
+                },
+                {
+                    name: "Cabo de guerra",
+                    latitude: -29.702455062590637,
+                    longitude: -54.695073312707784,
+                    icon: "trofeuC.png",
+                    description: "Campo"
+                },
+                {
+                    name: "Bocha campeira",
+                    latitude: -29.70212000404092,
+                    longitude: -54.69482839582078,
+                    icon: "trofeuC.png",
+                    description: "Campo"
+                },
+                {
+                    name: "NTG",
+                    latitude: -29.70419844938545,
+                    longitude: -54.69796388301659,
+                    icon: "alfinete.png",
+                    description: "Núcleo de Tradições Gaúchas Trempe da Saudade"
+                },
+                {
+                    name: "Refeitório",
+                    latitude: -29.703473889166226,
+                    longitude: -54.69717865359698,
+                    icon: "alfinete.png",
+                    description: "Local de refeições, com menu saudável e mesas para interação social."
+                },
+                {
+                    name: "Convivencia",
+                    latitude: -29.702676486972212,
+                    longitude: -54.696222011426585,
+                    icon: "alfinete.png",
+                    description: "Local de convivência dos estudantes"
+                },
+                {
+                    name: "CTG",
+                    latitude: -29.685610487306235,
+                    longitude: -54.676470859503844,
+                    icon: "alfinete.png",
+                    description: "CTG Cancela da Fronteira"
+                },
+                {
+                    name: "Abertura",
+                    latitude: -29.693054480787954,
+                    longitude: -54.6782872971689,
+                    icon: "alfinete.png",
+                    description: "Abertura Oficial do 30º Encontrão!"
+                },
+                {
+                    name: "IFFar-SVS",
+                    latitude: -29.702115796438793,
+                    longitude: -54.696880623638656,
+                    icon: "instituto.png",
+                    description: "IFFar São Vicente do Sul"
+                },
+                {
+                    name: "Dormitórios",
+                    latitude: -29.693054480787954,
+                    longitude: -54.6782872971689,
+                    icon: "alfinete.png",
+                    description: "Local para dormir, oferecendo um espaço tranquilo para relaxamento."
+                }
+            ];
+
+            pontos.forEach(ponto => {
+                const marker = new google.maps.Marker({
+                    position: { lat: ponto.latitude, lng: ponto.longitude },
+                    map: map,
+                    title: ponto.name,
+                    icon: {
+                        url: `../assets/icons/${ponto.icon}`, // Ícone personalizado, // Caminho para o ícone
+                        size: new google.maps.Size(45, 45), // Tamanho ajustado do ícone
+                        scaledSize: new google.maps.Size(45, 45), // Escala o ícone para o tamanho desejado
+    },
+                });
+
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `
+                        <h3>${ponto.name}</h3>
+                        <p>${ponto.description}</p>
+                    `
+                });
+
+                marker.addListener("click", () => {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBcvJ28TdKx6wOk3feqWRtKRc17S5c9xk&callback=initMap"></script>
+</body>
+</html>
